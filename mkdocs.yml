@@ -1,0 +1,403 @@
+site_name: algo
+nav: 
+    - 概论:
+        - 概论/index.md
+        - 概论/自由探索.md
+    - 基础:
+        - 基础/index.md
+        - 基础/理论.md
+        - 基础/枚举.md
+        - 基础/模拟.md
+        - 基础/递归&递归.md
+        - 基础/贪心.md
+        - 基础/排序.md
+        - 基础/前缀和&差分.md
+        - 基础/二分.md
+        - 基础/倍增.md
+        - 基础/构造.md
+    - 搜索:
+        - 搜索/index.md
+        - 搜索/DFS.md
+        - 搜索/BFS.md
+        - 搜索/双向搜索.md
+        - 搜索/启发式搜索.md
+        - 搜索/A※.md
+        - 搜索/迭代加深搜索.md
+        - 搜索/IDA※.md
+        - 搜索/Dancing Links.md
+        - 搜索/Alpha-Beta 剪枝.md
+        - 搜索/优化搜索.md
+    - 动态规划:
+        - 动态规划/index.md
+        - 动态规划/概论.md
+        - 动态规划/记忆化.md
+        - 动态规划/背包dp.md
+        - 动态规划/区间dp.md
+        - 动态规划/dag上的dp.md
+        - 动态规划/树形dp.md
+        - 动态规划/状压dp.md
+        - 动态规划/数位dp.md
+        - 动态规划/插头dp.md
+        - 动态规划/计数dp.md
+        - 动态规划/动态dp.md
+        - 动态规划/概率dp.md
+        - 动态规划/dp优化.md
+    - 字符串:
+        - 字符串/index.md
+        - 字符串/概述.md
+        - 字符串/字符串匹配.md
+        - 字符串/字符串哈希.md
+        - 字符串/字典树trie.md
+        - 字符串/前缀函数&KMP.md
+        - 字符串/Boyer-Moore算法.md
+        - 字符串/Z函数(ex KMP).md
+        - 字符串/自动机.md
+        - 字符串/AC自动机.md
+        - 字符串/后缀数组.md
+        - 字符串/后缀自动机.md
+        - 字符串/广义后缀自动机.md
+        - 字符串/后缀树.md
+        - 字符串/Manacher.md
+        - 字符串/回文树.md
+        - 字符串/序列自动机.md
+        - 字符串/最小表示法.md
+        - 字符串/Lyndon分解.md
+        - 字符串/Main-Lorentz算法.md
+    - 数学:
+        - 数学/index.md
+        - 数学/概论.md
+        - 数学/二进制.md
+        - 数学/高精度.md
+        - 数学/快速幂.md
+        - 数学/线性规划.md
+        - 数学/群论.md
+        - 数学/概率论.md
+        - 数学/博弈论.md
+        - 数学/牛顿迭代法.md
+        - 数学/数值积分.md
+        - 数学/傅里叶-莫茨金消元法.md
+        - 数学/序理论.md
+        - 数学/杨氏矩阵.md
+        - 数学/Schreier–Sims 算法.md
+        - 数学/Berlekamp-Massey 算法.md
+    - 组合数学:
+        - 组合数学/index.md
+        - 组合数学/排列组合.md
+        - 组合数学/抽屉原理.md
+        - 组合数学/容斥原理.md
+        - 组合数学/康托展开.md
+        - 组合数学/斐波那契数列.md
+        - 组合数学/错位排列.md
+        - 组合数学/Catalan数.md
+        - 组合数学/Stirling数.md
+        - 组合数学/Bell数.md
+        - 组合数学/Bernoulli数.md
+        - 组合数学/Entringer数.md
+        - 组合数学/Eulerian数.md
+        - 组合数学/分拆数.md
+        - 组合数学/Vandermonde卷积.md
+    - 线性代数:
+        - 线性代数/index.md
+        - 线性代数/线性代数简介.md
+        - 线性代数/向量.md
+        - 线性代数/内积和外积.md
+        - 线性代数/矩阵.md
+        - 线性代数/初等变换.md
+        - 线性代数/行列式.md
+        - 线性代数/高斯消元.md
+        - 线性代数/线性空间.md
+        - 线性代数/线性基.md
+        - 线性代数/线性映射.md
+        - 线性代数/特征多项式.md
+        - 线性代数/对角化.md
+        - 线性代数/Jordan标准型.md
+    - 数论:
+        - 数论/index.md
+        - 数论/概论.md
+        - 数论/素数.md
+        - 数论/最大公约数.md
+        - 数论/欧拉函数.md
+        - 数论/筛法.md
+        - 数论/Messiel-Lehmer.md
+        - 数论/分解质因数.md
+        - 数论/裴蜀定理.md
+        - 数论/欧几里得算法.md
+        - 数论/欧拉定理 & 费马小定理.md
+        - 数论/乘法逆元.md
+        - 数论/线性同余方程.md
+        - 数论/中国剩余定理.md
+        - 数论/威尔逊定理.md
+        - 数论/升幂定理.md
+        - 数论/卢卡斯定理.md
+        - 数论/拉格朗日定理.md
+        - 数论/原根.md
+        - 数论/离散对数.md
+        - 数论/剩余与单位根.md
+        - 数论/二次剩余.md
+        - 数论/莫比乌斯反演.md
+        - 数论/杜教筛.md
+        - 数论/PN筛.md
+        - 数论/Min_25筛.md
+        - 数论/洲阁筛.md
+        - 数论/Stern-Brocot树 & Farey序列.md
+        - 数论/循环连分数.md
+        - 数论/Pell方程.md
+    - 多项式 & 生成函数:
+        - 多项式 & 生成函数/index.md
+        - 多项式 & 生成函数/概述.md
+        - 多项式 & 生成函数/Lagrange插值.md
+        - 多项式 & 生成函数/fft.md
+        - 多项式 & 生成函数/ntt.md
+        - 多项式 & 生成函数/快速复数论变换.md
+        - 多项式 & 生成函数/快速沃尔什变换.md
+        - 多项式 & 生成函数/Chirp Z 变换.md
+        - 多项式 & 生成函数/多项式求逆.md
+        - 多项式 & 生成函数/多项式开方.md
+        - 多项式 & 生成函数/多项式除法 & 取模.md
+        - 多项式 & 生成函数/多项式对数函数 & 指数函数.md
+        - 多项式 & 生成函数/多项式牛顿迭代.md
+        - 多项式 & 生成函数/多项式多点求值 & 快速插值.md
+        - 多项式 & 生成函数/多项式三角函数.md
+        - 多项式 & 生成函数/多项式反三角函数.md
+        - 多项式 & 生成函数/常系数齐次线性递推.md
+        - 多项式 & 生成函数/多项式平移 & 连续点值平移.md
+        - 多项式 & 生成函数/符号化方法.md
+        - 多项式 & 生成函数/普通生成函数.md
+        - 多项式 & 生成函数/指数生成函数.md
+        - 多项式 & 生成函数/狄利克雷生成函数.md
+    - 刷题:
+        - 刷题\策略.md
+        - 刷题\1.数论.md
+        - 刷题\10.kmp.md
+        - 刷题\11.区间dp.md
+        - 刷题\2.树状数组.md
+        - 刷题\3.并查集.md
+        - 刷题\4.矩阵.md
+        - 刷题\5.数论.md
+        - 刷题\7.二分&尺取.md
+        - 刷题\8.容斥&莫比乌斯反演.md
+        - 刷题\9.单调栈&单调队列.md
+        - 刷题\区间dp.md
+        - 刷题\双指针.md
+        - 刷题\思维.md
+        - 刷题\数论.md
+        - 刷题\最短路.md
+        - 刷题\最短路1.md
+        - 刷题\树形dp.md
+        - 刷题\线性dp.md
+        - 刷题\背包dp.md
+extra_css:
+    - res/extra.css
+extra_javascript:
+    - res/extra.js
+
+    - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2022 - 2023 travis
+
+# repo_url: @
+# repo_name: @
+
+theme:
+    name: material
+    # custom_dir: overrides
+
+    palette:
+        - media: "(prefers-color-scheme)"
+          primary: red
+          accent: red
+          toggle:
+            icon: material/brightness-auto
+            name: 切换到暗模式
+        - media: "(prefers-color-scheme: light)"
+          primary: green
+          accent: green
+          scheme: default 
+          toggle:
+            icon: material/brightness-7
+            name: 切换到默认模式
+        - media: "(prefers-color-scheme: dark)"
+          primary: blue
+          accent: blue
+          scheme: slate
+          toggle:
+            icon: material/brightness-4
+            name: 切换到亮模式
+
+    font:
+        text: Roboto
+        code: Roboto Mono
+
+    language: zh
+    direction: ltr
+
+    logo: https://static.javatpoint.com/perl/images/perl-home.png
+    favicon: https://static.javatpoint.com/perl/images/perl-home.png
+    icon:
+        logo: octicons/heart-fill-24
+
+        repo: fontawesome/brands/github
+        edit: material/pencil
+        view: material/eye
+
+
+        admonition:
+            note: fontawesome/solid/note-sticky
+            abstract: fontawesome/solid/book
+            info: fontawesome/solid/circle-info
+            tip: fontawesome/solid/bullhorn
+            success: fontawesome/solid/check
+            question: fontawesome/solid/circle-question
+            warning: fontawesome/solid/triangle-exclamation
+            failure: fontawesome/solid/bomb
+            danger: fontawesome/solid/skull
+            bug: fontawesome/solid/robot
+            example: fontawesome/solid/flask
+            quote: fontawesome/solid/quote-left
+
+
+
+
+    features:
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.sections
+        # - navigation.expand
+        - navigation.prune
+        - navigation.indexes
+        - toc.follow
+        # - toc.integrate
+        - navigation.top
+
+        - search.suggest
+        - search.highlight
+        - search.share
+
+        - header.autohide
+
+        - navigation.footer
+
+        - content.action.edit
+        - content.action.view
+
+        - content.code.copy
+        - content.code.annotate
+
+        - content.tooltips
+
+
+extra:
+    alternate:
+        - name: cppreference
+          link: https://zh.cppreference.com/w/cpp
+          lang: zh
+
+    homepage: /
+
+    #consent:
+    #    title: cookie
+    #    description:    >-
+    #        sdd
+    #    cookies:
+    #        analytics:
+    #            github
+
+
+    social:
+        - icon: fontawesome/brands/github
+          link: 链接url地址
+          name: 标识名
+        - icon: fontawesome/brands/docker
+          link: 链接url地址
+          name: 标识名
+    generator: false
+
+
+plugins:
+    - search:
+        lang:
+            - en
+            - ja
+        # '[\s\-,:!=\[\]]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+        separator: '[\s\-\.]+'
+        jieba_dict: res/dict.txt
+        jieba_dict_user: res/user_dict.txt
+    - search:
+        lang:
+            - en
+        jieba_dict: dict/dict.txt
+        separator: '[\s\-\.]+'
+    # - typeset
+
+    - glightbox
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+
+    - attr_list
+    - md_in_html
+    - pymdownx.superfences
+
+    - attr_list
+
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true
+    #- pymdownx.tabbed:
+    #    slugify: !!python/object/apply:pymdownx.slugs.slugify
+    #        kwds:
+    #            case: lower
+
+    # - content.tabs.link
+
+
+    - tables
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+    - footnotes
+
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+    - attr_list
+    - md_in_html
+
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+
+    - pymdownx.arithmatex:
+        generic: true
+
+    - abbr
+    - attr_list
+    - pymdownx.snippets
+    - pymdownx.snippets:
+        auto_append:
+            - includes/abbr.md
+
