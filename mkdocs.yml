@@ -166,7 +166,12 @@ nav:
         - 多项式 & 生成函数/指数生成函数.md
         - 多项式 & 生成函数/狄利克雷生成函数.md
     - 刷题:
+        - 刷题\算法竞赛.md
+        - 刷题\tmp.md
+        - 刷题\lqb.md
         - 刷题\策略.md
+        - 刷题\题目模型.md
+        - 刷题\月赛反思.md
         - 刷题\1.数论.md
         - 刷题\10.kmp.md
         - 刷题\11.区间dp.md
@@ -186,6 +191,38 @@ nav:
         - 刷题\树形dp.md
         - 刷题\线性dp.md
         - 刷题\背包dp.md
+    - oiwiki:
+        - oiwiki\ST表.md
+        - oiwiki\base.md
+        - oiwiki\cdq.md
+        - oiwiki\动态规划.md
+        - oiwiki\单调栈&单调队列.md
+        - oiwiki\图论.md
+        - oiwiki\块.md
+        - oiwiki\堆.md
+        - oiwiki\字符串.md
+        - oiwiki\并查集.md
+        - oiwiki\杂项.md
+        - oiwiki\板子.md
+        - oiwiki\树状数组.md
+        - oiwiki\线段树.md
+    - oiwiki:
+        - oiwiki-数学\博弈论.md
+        - oiwiki-数学\多项式.md
+        - oiwiki-数学\多项式1.md
+        - oiwiki-数学\Meissel-Lehmer.md
+        - oiwiki-数学\二进制集合.md
+        - oiwiki-数学\复数.md
+        - oiwiki-数学\数论0.md
+        - oiwiki-数学\数论1.md
+        - oiwiki-数学\数论2.md
+        - oiwiki-数学\数论3.md
+        - oiwiki-数学\概率论.md
+        - oiwiki-数学\生成函数.md
+        - oiwiki-数学\线性代数.md
+        - oiwiki-数学\组合数学1.md
+        - oiwiki-数学\组合数学2.md
+        - oiwiki-数学\群论.md
 extra_css:
     - res/extra.css
 extra_javascript:
@@ -231,7 +268,7 @@ theme:
         text: Roboto
         code: Roboto Mono
 
-    language: zh
+    language: en
     direction: ltr
 
     logo: https://static.javatpoint.com/perl/images/perl-home.png
@@ -293,6 +330,17 @@ theme:
 
 extra:
     alternate:
+        - name: vjudge
+          link: https://vjudge.csgrandeur.cn/article/187
+        - name: oiwiki
+          link: https://oi-wiki.org/
+          lang: zh
+        - name: cp-algorithms
+          link: https://cp-algorithms.com/index.html
+          lang: zh
+        - name: nowcoder
+          link: https://ac.nowcoder.com/acm/skill/acm
+          lang: zh
         - name: cppreference
           link: https://zh.cppreference.com/w/cpp
           lang: zh
