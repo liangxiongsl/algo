@@ -1,0 +1,1605 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../vp/" rel="prev"/>
+<link href="../%E9%A2%98%E7%9B%AE/" rel="next"/>
+<link href="https://static.javatpoint.com/perl/images/perl-home.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>题目模型 - algo</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../res/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="algo" class="md-header__button md-logo" data-md-component="logo" href="/" title="algo">
+<img alt="logo" src="https://static.javatpoint.com/perl/images/perl-home.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            algo
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              题目模型
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换到暗模式" class="md-option" data-md-color-accent="red" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="切换到暗模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="切换到默认模式" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换到默认模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="切换到亮模式" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="切换到亮模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="Select language" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="https://vjudge.csgrandeur.cn/article/187" hreflang="">
+                    vjudge
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://oi-wiki.org/" hreflang="zh">
+                    oiwiki
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://cp-algorithms.com/index.html" hreflang="zh">
+                    cp-algorithms
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://ac.nowcoder.com/acm/skill/acm" hreflang="zh">
+                    nowcoder
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://zh.cppreference.com/w/cpp" hreflang="zh">
+                    cppreference
+                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E6%A6%82%E8%AE%BA/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/">
+        概论
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E6%A6%82%E5%BF%B5/1.%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/">
+        概念
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../vp/">
+        特训
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%88%B7%E9%A2%98/1.%E6%95%B0%E8%AE%BA/">
+        刷题
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="algo" class="md-nav__button md-logo" data-md-component="logo" href="/" title="algo">
+<img alt="logo" src="https://static.javatpoint.com/perl/images/perl-home.png"/>
+</a>
+    algo
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          概论
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          概论
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/">
+        自由探索
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/%E6%A0%A1%E8%B5%9B/">
+        校赛
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/1.%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/">
+        1.常见算法
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/2.%E6%90%9C%E7%B4%A2/">
+        2.搜索
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/3.%E6%9D%82%E9%A1%B9/">
+        3.杂项
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/4.%E6%95%B0%E5%AD%A6/">
+        4.数学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/5.dp/">
+        5.dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+        6.数据结构
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/7.%E5%9B%BE%E8%AE%BA/">
+        7.图论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/8.%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">
+        8.计算几何
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E8%AE%BA/9.%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+        9.字符串
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          概念
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          概念
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/1.%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/">
+        1.常见算法
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/2.%E6%90%9C%E7%B4%A2/">
+        2.搜索
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/3.%E6%9D%82%E9%A1%B9/">
+        3.杂项
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/4.%E6%95%B0%E5%AD%A6/">
+        4.数学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/5.dp/">
+        5.dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+        6.数据结构
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/7.%E5%9B%BE%E8%AE%BA/">
+        7.图论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/8.%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">
+        8.计算几何
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E6%A6%82%E5%BF%B5/9.%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+        9.字符串
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          特训
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          特训
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../vp/">
+        Vp
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          题目模型
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        题目模型
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    二分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disjoint-set-union">
+    并查集(Disjoint Set Union)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    树状数组
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dp">
+    背包dp
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dp_1">
+    区间dp
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dp_2">
+    dp优化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#st">
+    ST表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    双指针
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    哈希
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E9%A2%98%E7%9B%AE/">
+        题目
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%AD%96%E7%95%A5/">
+        策略
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/">
+        算法竞赛
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cf/">
+        Cf
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dp/">
+        Dp
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          刷题
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          刷题
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/1.%E6%95%B0%E8%AE%BA/">
+        1.数论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/2.%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">
+        2.树状数组
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/3.%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+        3.并查集
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/4.%E7%9F%A9%E9%98%B5/">
+        4.矩阵
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/5.%E6%95%B0%E8%AE%BA/">
+        5.数论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/7.%E4%BA%8C%E5%88%86%26%E5%B0%BA%E5%8F%96/">
+        7.二分&amp;尺取
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/8.%E5%AE%B9%E6%96%A5%26%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">
+        8.容斥&amp;莫比乌斯反演
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/9.%E5%8D%95%E8%B0%83%E6%A0%88%26%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">
+        9.单调栈&amp;单调队列
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/10.kmp/">
+        10.kmp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/11.%E5%8C%BA%E9%97%B4dp/">
+        11.区间dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E5%8C%BA%E9%97%B4dp/">
+        区间dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E5%8F%8C%E6%8C%87%E9%92%88/">
+        双指针
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E6%80%9D%E7%BB%B4/">
+        思维
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E6%95%B0%E8%AE%BA/">
+        数论
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+        最短路
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E6%9C%80%E7%9F%AD%E8%B7%AF1/">
+        最短路1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E6%A0%91%E5%BD%A2dp/">
+        树形dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E7%BA%BF%E6%80%A7dp/">
+        线性dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98/%E8%83%8C%E5%8C%85dp/">
+        背包dp
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    二分
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disjoint-set-union">
+    并查集(Disjoint Set Union)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    树状数组
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dp">
+    背包dp
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dp_1">
+    区间dp
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dp_2">
+    dp优化
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#st">
+    ST表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    双指针
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    哈希
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>题目模型</h1>
+<h3 id="_1"></h3>
+<div class="admonition note">
+<p class="admonition-title">idea</p>
+<ul>
+<li>计算 1..n 以内 lowbit 操作构成多少条边？<ul>
+<li>可以证明 <span class="arithmatex">\(1..2^n\)</span> 以内有 <span class="arithmatex">\(2^{n+1} - \frac {n(n+3)}2 - 2 + n = 2^{n+1} - \frac {n(n+1)}2 - 2\)</span> 条边，这是错误的的</li>
+</ul>
+</li>
+<li><a href="https://blog.csdn.net/CC_dsm/article/details/98166835">珂朵莉树</a></li>
+<li>Slope Trick，wqs 二分</li>
+<li>树分治</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">忌讳</p>
+<ol>
+<li>没读入完成就输出</li>
+</ol>
+</div>
+<div class="admonition 资源">
+<p class="admonition-title">资源</p>
+<ul>
+<li><a href="https://cp-algorithms.com/index.html">Algorithms for Competitive Programming</a>：一个github项目，类似于oi-wiki</li>
+</ul>
+</div>
+<h3 id="_2">二分</h3>
+<div class="admonition 理论">
+<p class="admonition-title">理论</p>
+<ul>
+<li>若区间两边满足对立的条件，那么可以二分查找条件之间的临界点</li>
+<li>
+<p>整数模板（注意错误处理；low-1 用于错误处理，当然 ok 也可以处理；如果假设错了，则会返回 x=l ！！！）
+    <div class="highlight"><span class="filename">查找解区间的左端点-1，即 x</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>int x, ok = false;
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>for(int l=low-1, r=up; x=l+r&gt;&gt;1, l+1&lt;r; ){
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    // int fx = ...
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    // ok |= fx is satisfied
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    if(<mark class="critic">假设 x 在左边</mark>) l = x;
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    else r = x;
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>}
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>// 如果将 l=x 改成 l=x+1，l+1&lt;r 改成 l&lt;r，可能更加正确？
+</code></pre></div></p>
+<div class="highlight"><span class="filename">查找解区间的右端点，即 x-1</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>int x, ok = false;
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>for(int l=low-1, r=up; x=l+r&gt;&gt;1, l+1&lt;r; ){
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>    // int fx = ...
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>    // ok |= fx is satisfied
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>    if(<mark class="critic">假设 x 在左边</mark> 或 <mark class="critic">满足条件</mark>) l = x;
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>    else r = x;
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>}
+</code></pre></div>
+</li>
+<li>
+<p>注意：浮点数求解区间右端点，则返回 r；精度应该比题目少一个数量级；输出时应防止四舍五入 （由于浮点数不能直接向下取整，所以很多行为和整数不同）</p>
+</li>
+</ul>
+</div>
+<div class="admonition 题目">
+<p class="admonition-title">题目</p>
+<ul>
+<li><a href="https://ac.nowcoder.com/acm/problem/14504">A</a>： <span class="arithmatex">\(\sum\limits_{i=1}^n (h_i + a_i\cdot x)[h_i + a_i\cdot x\ge L] == s, \min\{ x \}\)</span></li>
+<li><a href="https://ac.nowcoder.com/acm/problem/13610">B</a>： 给定 <span class="arithmatex">\(n\times m\)</span>(<span class="arithmatex">\(\le 500\)</span>) char 矩阵，找出满足重复不小于 m(m=2)次的方阵 (矩形)，输出<mark class="critic">最大的方阵边长</mark><ul>
+<li>考虑暴力：枚举给个点，再枚举边长，然后将枚举到的方阵放入map中进行比较，总复杂度是 <span class="arithmatex">\(O(n^3\cdot 方阵的处理\&amp;map)\)</span></li>
+<li>可以发现光是枚举矩阵就很吃力，考虑优化：<ol>
+<li>注意到 方阵边长 和 该方阵重复的次数 <mark class="critic">成反比</mark>：考虑 “向左逼近” 的二分（取解区间的右边界），此时 <span class="arithmatex">\(O(n)\to O(\log n)\)</span></li>
+<li>使用 <mark class="critic">哈希</mark> 处理方阵的比较问题：<ul>
+<li>规定 x 和 y 为 "哈希系数"，值分别为 3，7 （均是质数）；这些数定义在<mark class="critic">非负整数域</mark>上</li>
+<li>定义：<span class="arithmatex">\(P_{n,m} = P_{n, m-1}\cdot y + a_{n, m} \iff P_{n,m} = \sum\limits_{j=1}^m y^{m-j} a_{n, j}\)</span></li>
+<li>二维哈希前缀：<span class="arithmatex">\(Q_{n,m} = Q_{n-1, m}\cdot x + P_{n, m} \iff Q_{n,m} = \sum\limits_{i=1}^n x^{n-i} P_{i, m} = \sum\limits_{i=1}^n x^{n-i} \sum\limits_{j=1}^m y^{m-j} a_{i, j}\)</span></li>
+<li>幂级数：<span class="arithmatex">\(X_n = X_{n-1} * x \iff X_n = x^n\)</span>，<span class="arithmatex">\(Y_n = Y_{n-1} * y \iff Y_n = y^n\)</span></li>
+<li>长度为 <span class="arithmatex">\(a \cdot b\)</span> 的<mark class="critic">子矩阵的哈希值</mark>： <span class="arithmatex">\(hash = P_{i, j} - P_{i-a+1, j} \cdot X_{a-1} - P_{i, j-b+1}\cdot Y_{b-1} + P_{i-a+1, j-b+1}\cdot X_{a-1} \cdot Y_{b-1}\)</span><ul>
+<li>又或者，“左开右闭矩阵”：长度为 <span class="arithmatex">\((a-1) \cdot (b-1)\)</span> 的<mark class="critic">子矩阵的哈希值</mark>： <span class="arithmatex">\(hash = P_{i, j} - P_{i-a, j} \cdot X_{a} - P_{i, j-b}\cdot Y_{b} + P_{i-a, j-b}\cdot X_{a} \cdot Y_{b}\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">vjudge</p>
+<ul>
+<li><a href="">A</a>：</li>
+<li><a href="">B</a></li>
+<li><a href="">C</a></li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549704#problem/E">E</a>： <span class="arithmatex">\(\max\{ 100\cdot \frac {\displaystyle \sum\limits_{i=1}^n a_i\cdot c_i} {\displaystyle \sum\limits_{i=1}^n b_i \cdot c_i} \}, c_i=0..1, \sum c_i \ge k\)</span>, 隐含条件：<span class="arithmatex">\(\frac {a_i}{b_i}\)</span><ul>
+<li>需要最大化的是一个分数，设任意一个解 x 满足： <span class="arithmatex">\(x \le \max\{ {\sum\limits_{i=1}^n a_i\cdot c_i} {\sum\limits_{i=1}^n b_i \cdot c_i} \} \}\)</span> （先忽略系数 100）</li>
+<li>将不等式化简： <span class="arithmatex">\(\sum\limits_{i=1}^n (a_i - b_i\cdot x)c_i \ge 0\)</span> (<span class="arithmatex">\(b_i \ge 0\)</span>) （这里忽略掉符号 max，即我们假设方案 <span class="arithmatex">\(\{  c_i \}\)</span> 是最优方案）</li>
+<li>二分策略：由于 x 和 等式左边 的关系是单调不增的，所以二分答案 x</li>
+<li>如何求 等式左边？对不等式左边<mark class="critic">排序</mark>，然后<mark class="critic">贪心</mark>取最大 k 个值计算贡献即可（不能选多于 k 个物品，因为隐含条件暗示取得更多不会使答案更优）</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549704#problem/F">F</a>：<span class="arithmatex">\(\max\{ \frac {\displaystyle \sum\limits_{i=1}^n a_i\cdot c_i} {\displaystyle \sum\limits_{i=1}^n b_i \cdot c_i} \}, c_i=0..1, \sum c_i == k\)</span>，求最值的方案（k 个物品的 id）<ul>
+<li>与 G 类似</li>
+<li>注意：排序贪心之前，应该记录每个物品的 id</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549704#problem/G">G</a>：<span class="arithmatex">\(\sum\limits_{i=1}^n\sum\limits_{j=1}^{i-1} [|a_i-a_j| \le x] \ge \lceil \frac {C_n^2}{2} \rceil\)</span>，求 x （即 序列 <span class="arithmatex">\(\{ a_n \}\)</span> 中 <span class="arithmatex">\(C_n^2\)</span> 个数对的差值构成的集合中，x 为它们的中位数）<ul>
+<li>我们二分 x ，求不等式左边 (可以观察到 x 与 不等式左边 是单调递增的)</li>
+<li>计算不等式左边：注意到序列 a[ ] 的前后顺序不会影响结果，对其排序后不等式左边<ul>
+<li>一种方法是枚举 i，lower_bound 找到 <span class="arithmatex">\(a_i-x\)</span> 的左边界 low，满足条件的数对为 <span class="arithmatex">\(i-low\)</span> 个（等价的方法：upper_bound 找到 <span class="arithmatex">\(a_i+x\)</span> 的右边界右侧 up，满足条件的数对为 <span class="arithmatex">\(up-i-1\)</span> 个）</li>
+<li>另一种方法：树状数组（同样是 <span class="arithmatex">\(n\log n\)</span> 的复杂度）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549704#problem/H">H</a>：<span class="arithmatex">\(\sum\limits_{i=1}^n \sum\limits_{j=1}^n [a_{i, j} \le x] &lt; m, a_{i, j} = i^2 + j^2 + 10^5(i-j) + i\cdot j\)</span><ul>
+<li>二分 x，枚举 j，再 二分 i</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="disjoint-set-union">并查集(Disjoint Set Union)</h3>
+<p>Disjoint Set Union 意思是 “不相交集合合并”</p>
+<div class="admonition note">
+<p class="admonition-title">理论：</p>
+<ul>
+<li>维护的属性：<ul>
+<li>依赖属性：（依赖于父节点的属性）<ul>
+<li><mark class="critic">ts[ ]</mark>：并查集的基本信息，存储 id=x 的结点的直接父亲 <span class="arithmatex">\(f_x\)</span> （<span class="arithmatex">\(f_x\)</span> 与 根结点 <span class="arithmatex">\(root_x\)</span> 有时候并不等价，如路径压缩时）</li>
+<li><mark class="critic">w[ ]</mark>：当前结点到根的运算关系 (或 权值)<ul>
+<li>支持的运算满足 <mark class="critic">可差分</mark> 性质：如：加(+)，模 p 的加法群(+, %)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>儿子属性：仅有根结点具有此属性（也可以维护根结点自己的信息）<ul>
+<li>size[ ]：并查集结点数量</li>
+<li>sum[ ]：并查集某种运算的累加贡献 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本操作：<ul>
+<li><mark class="critic">查询根结点</mark> <span class="arithmatex">\(rt(x)\)</span>：当 <span class="arithmatex">\(x=root_x\)</span> 时返回 x，否则递归得到 <span class="arithmatex">\(f_x\)</span> 的根结点 <span class="arithmatex">\(r_x\)</span>，将 <span class="arithmatex">\(r_x\)</span> 赋值为 x 的父节点，替代原有的 <span class="arithmatex">\(f_x\)</span> 即 <mark class="critic">路径压缩</mark>，但是会破坏并查集的树状结构)<ul>
+<li>在路径压缩之前：应该更新 x 的依赖属性(如：<span class="arithmatex">\(w_x = w_x \circ w_{f_x}\)</span>)</li>
+</ul>
+</li>
+<li><mark class="critic">合并两个结点</mark> <span class="arithmatex">\(unite(x, y[, val])\)</span>：查询 x 和 y 的根结点 <span class="arithmatex">\(r_x\)</span> 和 <span class="arithmatex">\(r_y\)</span>，两个结点同属一个集合则无需操作，否则将 <span class="arithmatex">\(r_x\)</span> 插入到 <span class="arithmatex">\(r_y\)</span> 上 (<span class="arithmatex">\(ts_{r_x} = r_y\)</span>)<ul>
+<li>在合并之后：应该更新 <span class="arithmatex">\(r_x\)</span> 依赖属性 （如：<span class="arithmatex">\(w_{r_x} = val \circ w_y \circ^{-1} w_x\)</span>） 和 <span class="arithmatex">\(r_y\)</span> 的儿子属性</li>
+</ul>
+</li>
+<li>需要扩展域的操作：（多开两倍的结点，每个结点 i 的信息存储在结点 i+n 中，并且初始时结点 i 指向 i+n，i+n 成自环）<ul>
+<li><mark class="critic">删除结点</mark> <span class="arithmatex">\(delete(x)\)</span>：<span class="arithmatex">\(ts_x = x\)</span>，此外还需要更新 <span class="arithmatex">\(r_x\)</span> 的儿子属性（如：<span class="arithmatex">\(size_{r_x} -= 1\)</span>）</li>
+<li><mark class="critic">移动结点</mark> <span class="arithmatex">\(move(x, y)\)</span>：查询 x 和 y 的根结点 <span class="arithmatex">\(r_x\)</span> 和 <span class="arithmatex">\(r_y\)</span>，两个结点同属一个集合则无需操作，否则将 <span class="arithmatex">\(x\)</span> 插入到 <span class="arithmatex">\(r_y\)</span> 上 (<span class="arithmatex">\(ts_x = r_y\)</span>)<ul>
+<li>此外还需要更新 <span class="arithmatex">\(x\)</span> 依赖属性 和 <span class="arithmatex">\(r_x\)</span> / <span class="arithmatex">\(r_y\)</span> 的儿子属性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊操作<ul>
+<li><mark class="critic">删除结点&amp;&amp;关联的边</mark>：逆向建立 删除了所有可删除的结点（及其 关联的边）后的 并查集森林，从后往前操作，此时 删点 就等价于 添加多条边，逆向输出查询的答案即可  <ul>
+<li>建立最终状态的森林：用哈希数组标记已删除的结点，建图时绕过与该点有关的边</li>
+</ul>
+</li>
+<li><mark class="critic">删除边</mark>：同样是逆向建图，从后往前操作<ul>
+<li>建立最终状态的森林：用 <code>vetor&lt;set&lt;int&gt;&gt;</code> 建无向图，以方便删边</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>应用：<ul>
+<li>维护具有某些相同性质的结点的集合</li>
+<li>维护并查集数量</li>
+<li>带权并查集的应用：<ul>
+<li><mark class="critic">插入 / 维护 结点之间的关系</mark>：(假设将 x 所在集合合并到 y 所在的集合上) <span class="arithmatex">\(w_x \circ w_{r_x} = val \circ w_y\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(w_{r_x} = val \circ w_y \circ^{-1} w_x\)</span></li>
+<li><mark class="critic">查询结点之间的关系</mark>：<span class="arithmatex">\(w_x \circ^{-1} w_y\)</span></li>
+<li>判断某些结点关系的 <mark class="critic">绝对非法性</mark>：两个结点的关系绝对非法 <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(root_x == root_y~~\)</span>  &amp;  <span class="arithmatex">\(~~w_x \circ^{-1} w_y \ne 断言的权值关系\)</span> （实际上 每个并查集都是一棵树，即并查集内的任何两个元素都不构成环）</li>
+</ul>
+</li>
+<li>维护序列连续区间（如：维护以左端点为根的区间，定义 根结点上的点可用(仅当根结点合法)，而根结点有段的点不可用）</li>
+<li>维护集合最优点：合并结点时以更优的结点作为根</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>离散化：包括一些 id 未以 1..n 编号的情况，或者 维护值域较长的1维坐标</li>
+<li>初始化：包括维护区间时应该开到 id=n+1 处</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition 洛谷">
+<p class="admonition-title">洛谷</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P1955">A</a>：给定多个变量的 相等 / 不等 关系，判断是否没有绝对的逻辑错误<ul>
+<li>其中 相等的变量 可以视作 <mark class="critic">具有同一关系</mark> 的集合，而不同集合之间可能 具有同一关系 或 相反关系</li>
+<li>我们一次性将具有同等关系的结点合并为多个集合，若某个不等关系两边的变量同属于一个集合，由于违反了定义，所以这种逻辑有绝对错误</li>
+</ul>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P1197">B</a>：给定一张图，删除 k 个点，输出删除前后的连通块数量<ul>
+<li>并查集<mark class="critic">不支持</mark> <mark class="critic">(有依赖的)删除操作</mark>，即删除一个点不会影响其他儿子分裂成新的连通块，而只会影响父亲的贡献</li>
+<li>但我们可以 从后往前 添加结点 &amp; 创建相关的合法边，并统计连通块数量</li>
+<li>此前，我们应该创建一张图，记录点和边的关系 及其 合法性</li>
+</ul>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P2024">C</a>：给定长度为 3 的循环关系，主要问题是 处理每一对逻辑关系 和 累加绝对逻辑错误的数量<ol>
+<li><span class="arithmatex">\(root_x == root_y\)</span>：x 和 y 有具有一定的联系，即 <span class="arithmatex">\(R_{x,y} = (w_x - w_y) \% 3, R = 0..2\)</span>，若 <span class="arithmatex">\(R=0\)</span> 表示 x 和 y 等价结点，否则根据题意赋予含义；此时必然可以判断 x 和 y 的关系是否符合绝对逻辑</li>
+<li><span class="arithmatex">\(root_x \ne root_y\)</span>：x 和 y 没有必然逻辑关系，我们选择合并两种关系所属的集合</li>
+</ol>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P1196">D</a>：</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">vjudge</p>
+<ul>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/A">A</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/B">B</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/C">C</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/D">D</a>：维护一维数组的一组连续区间 <span class="arithmatex">\([l_i, r_i]\)</span> 的和(+)，并判断一个区间和是否 绝对非法<ul>
+<li>考虑并查集维护闭区间，注意到任意两个 结点 都能直接维护一段 闭区间 <span class="arithmatex">\([l_i, r_i]\)</span>，但是单个结点的初值是不确定的（即 <span class="arithmatex">\([i, i]\)</span> 的区间和未定义）</li>
+<li>若我们维护维护开区间，<span class="arithmatex">\([l_i, r_i+1)\)</span> 和 <span class="arithmatex">\([i, i)\)</span> 却可以方便地维护，其中后者的初始化为 加法运算的单位元(0) 即可</li>
+<li>根据并查集的性质，仅当 <span class="arithmatex">\(root_x == root_y\)</span> 时可以判断区间和是否 绝对非法</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/E">E</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/F"><mark class="critic">F</mark></a>：给定 n 个断言，好人和坏人的数量 p，q；每个断言形如：“x 说 y 是 好人(yes) / 坏人(no)”（好人只说真话，坏人只说假话；保证所有断言都不矛盾）；问是否有唯一的解确定谁是好人谁是坏人，方案唯一则输出好人id
+        1.  枚举所有2*2=4种断言可以发现性质：“x y yes” 表示 x 和 y 是“同类”，“x y no” 表示 x 和 y 是异类；我们定义 同类 之间的权值关系为 0，异类 之间的权值关系为 1，构成模 2 加法群
+        2.  另外，模 k 的加法群意味着 <mark class="critic">每个并查集最多可以划分为 k 个群</mark>，因此我们选择并查集的一个结点作为代表 并 将这些代表离散化为连续的新 id（每个并查集的标识），并且每个并查集都有 k 个 <mark class="critic">群属性</mark>（并查集个数记为 m）
+        3.  本题中群属性 (a[ ], b[ ]) 分别设为当前并查集的 好人数量 / 坏人数量
+        4.  我们对 好人 做泛化的背包（<span class="arithmatex">\(\sum d_i == p, CNT\{ c_i \}\)</span>  &amp; <span class="arithmatex">\(d_i = a_i 或 b_i, c_i=0..2\)</span>），若 <span class="arithmatex">\(f_{m, p}=1\)</span>，则意味着方案唯一，开一个数组 g[ ] 回溯对于 好人群体(gid=i) 选择的方案
+        5.  若某个结点(id=i)与 当前并查集的好人群体 的选择方案相同，说明该结点是好人</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/G">G</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/H">H</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/I">I</a>：维护两种操作：插入两个二维点之间的相对哈密顿长度<span class="arithmatex">\((\Delta_x, \Delta_y)\)</span></li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/J">J</a>：给定 模 2 加法群 的多个逻辑关系，判断是否有绝对非法逻辑</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/K"><mark class="critic">K</mark></a>：给定 m 个比赛结果，除了 裁判 以外一个人只有 3 种状态其中一种，并且只有三种比赛结果 胜/负/平 (模 3 的加法群)；如果裁判唯一，判断裁判的 id &amp; 第 j 场比赛后可以判定裁判是谁<ul>
+<li>由于裁判的参与会导致 无法构成一颗树 (换句话说，有裁判的比赛就不能构成并查集)，我们枚举可能的裁判 id=i，若 m 场比赛没有绝对错误逻辑，只能说明该人 可能是裁判，否则此人 <mark class="critic">一定不是唯一的裁判</mark>（即便他可能是裁判，我们还是去除他是裁判的嫌疑，使得嫌疑的裁判尽可能小）</li>
+<li>统计可能是唯一的裁判的人数 tot，若 tot = 1，则裁判(不严格地)唯一</li>
+<li>若裁判唯一，可能判断该命题一定是在枚举其他人过程中出现矛盾的较后的一场比赛</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/L">L</a>：维护两种操作：删边，查询集合内最优的点（点权最大 &amp;&amp; 下标最小）<ul>
+<li>查询：启发式合并即可</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/M">M</a>：判断一张图是否为 一颗无向树<ul>
+<li>一张图为无向树 <span class="arithmatex">\(\iff\)</span> 图为空  或  有且仅有一张无向无环图</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/550123#problem/N">N</a>：与 M 相同</li>
+</ul>
+</div>
+<h3 id="_3">树状数组</h3>
+<div class="admonition 理论">
+<p class="admonition-title">理论</p>
+<ul>
+<li>基本操作： <mark class="critic">单点修改</mark>，<mark class="critic">区间查询</mark></li>
+<li>支持的运算满足 <mark class="critic">结合律</mark> 和 <mark class="critic">交换律</mark><ul>
+<li>结合律： <span class="arithmatex">\((x \circ y)\circ z = x \circ (y \circ z)\)</span></li>
+<li>可差分： <span class="arithmatex">\(x \circ y \circ^{-1} y = x\)</span> （<span class="arithmatex">\(\circ^{-1}\)</span> 为 <span class="arithmatex">\(\circ\)</span> 的逆运算）</li>
+</ul>
+</li>
+<li>支持的运算：<ul>
+<li>和(+)，积(<span class="arithmatex">\(\times\)</span>, 仅当 模意义下的积 可差分)</li>
+<li>异或(<span class="arithmatex">\(\oplus\)</span>, xor)</li>
+<li>注意：gcd，max，min 原则上不支持 （但是最值问题可以特殊处理：<a href="http://history.ioinformatics.org/oi/files/volume9.pdf#page=41">Efficient Range Minimum Queries using Binary Indexed Trees</a>）</li>
+</ul>
+</li>
+<li>给定序列 <span class="arithmatex">\(\{ a_i \}\)</span>，为其生成一个序列 <span class="arithmatex">\(\{ c_i \}\)</span>，令 <span class="arithmatex">\(c_i = \displaystyle \sum\limits_{j=i-lowbit_i+1}^{\circ, i} a_j\)</span><ul>
+<li>将 lowbit(x) 定义为：<span class="arithmatex">\(lowbit(x) = x \&amp; (~x+1) = x \&amp; -x\)</span> （即 x 的最后一个二进制 掩码），简记为 <span class="arithmatex">\(lb_x\)</span></li>
+<li><mark class="critic">计算前缀和</mark> <span class="arithmatex">\(s_n = \sum\limits_{i=1}^{\circ, n}a_i\)</span><ul>
+<li>递归计算：<mark class="critic"><span class="arithmatex">\(s_n = c_n \circ s_{\displaystyle n-{lb}_n}\)</span>，<span class="arithmatex">\(s_1 = c_1\)</span></mark> </li>
+<li>（注意：根据定义，<span class="arithmatex">\(c_0\)</span> 管辖区间 <span class="arithmatex">\([0-lb_0+1, 0] = [1, 0] = \emptyset\)</span>，所以 <span class="arithmatex">\(c_0\)</span> 没有意义）</li>
+<li>复杂度：<span class="arithmatex">\(popcount(x)\)</span> (x 的掩码数量)，即 <span class="arithmatex">\(O(\log n)\)</span></li>
+</ul>
+</li>
+<li><mark class="critic">单点修改</mark><ul>
+<li>定义：<span class="arithmatex">\(x = s\cdot 2^{k+1} + 2^k\)</span> (<span class="arithmatex">\(2^k\)</span> 是 x 的最小掩码)，<span class="arithmatex">\(l_x = x - lb_x + 1\)</span>(即其管辖的左边界)，<span class="arithmatex">\(c[x] = [l_x, x]\)</span> （即 x 管辖的范围）</li>
+<li>定理：<ol>
+<li>对于 <span class="arithmatex">\(x \le y\)</span> <span class="arithmatex">\(\implies\)</span>  c[x] 与 c[y] 没有交集 或 <span class="arithmatex">\(c[x] \in c[y]\)</span></li>
+<li><span class="arithmatex">\(c[x] \subsetneq c[y], y = x + lb_x\)</span> (只需证明： <span class="arithmatex">\(l_y \le l_x \le x \le y, x\ne y\)</span>)</li>
+<li><span class="arithmatex">\(x &lt; z &lt; y, y = x + lb_x\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(c[x] \cap c[z] = \emptyset\)</span></li>
+<li>结论：<mark class="critic"><span class="arithmatex">\(x\)</span> 有且仅有一个最小的(真)父集合 <span class="arithmatex">\(x + lb_x\)</span> (<span class="arithmatex">\(x \ge 1\)</span>)</mark></li>
+</ol>
+</li>
+<li><mark class="critic"><span class="arithmatex">\(update(x, val)\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(c_x \leftarrow c_x \circ val, update(x + lb_x, val)\)</span></mark>  (<span class="arithmatex">\(x \le upper_bound\)</span>)</li>
+<li>复杂度：约为 <span class="arithmatex">\(popcount(upper\_bound)\)</span>，即 <span class="arithmatex">\(O(\log n)\)</span></li>
+</ul>
+</li>
+<li><mark class="critic">初始化树状数组</mark><ol>
+<li>做 n 次单点修改，<span class="arithmatex">\(O(n\log n)\)</span></li>
+<li>由于每个 <span class="arithmatex">\(c_i\)</span> 是由其直接儿子的贡献得到的，因此每次迭代 i 时，都对父亲 <span class="arithmatex">\(i+lb_i\)</span> 累加贡献，<span class="arithmatex">\(O(n)\)</span></li>
+<li>预处理 a[ ] 的前缀和 s[ ]，根据定义 <span class="arithmatex">\(c_i = s_i - s_{i-lb_i}\)</span></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>实现 <mark class="critic">区间修改</mark> / <mark class="critic">单点查询</mark>：<ul>
+<li>定义差分数组 <span class="arithmatex">\(d_i = a_i - a_{i-1}\)</span>；用树状数组维护 <span class="arithmatex">\(d_i\)</span></li>
+<li>单点查询：<span class="arithmatex">\(s_i = \sum\limits_{j=1}^i d_j = a_i - a_0 = a_i\)</span> （这里假设 <span class="arithmatex">\(a_0 = 0\)</span>）</li>
+<li>区间修改：<span class="arithmatex">\(update(x, val), inv\_update(x+1, val)\)</span> （inv_update 指的是逆向更改）<ul>
+<li>简单证明：由于我们只需要更改 i = x 处的点，而 update(x, val) 却会影响 <span class="arithmatex">\(s_i, i\ge x+1\)</span> 的结果，为了消去这种影响，我们应该对 i=x+1 实行逆更改 inv_update(x, val)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实现 <mark class="critic">区间修改</mark> / <mark class="critic">区间查询</mark>：<ul>
+<li>区间查询：<ul>
+<li><span class="arithmatex">\(s_x = \sum\limits_{i=1}^x a_i = \sum\limits_{i=1}^x \sum\limits_{j=1}^i d_j = \sum\limits_{j=1}^x \sum\limits_{i=j}^x d_j = \sum\limits_{j=1}^x (x-j+1)d_j = (x+1)\sum\limits_{j=1}^x d_j - \sum\limits_{j=1}^x j\cdot d_j\)</span></li>
+<li>因此我们维护 <span class="arithmatex">\(\{ d_i \}\)</span> 和 <span class="arithmatex">\(\{ i\cdot d_i \}\)</span> 两个数组</li>
+</ul>
+</li>
+<li>区间修改：分别对 <span class="arithmatex">\(\{ d_i \}\)</span> 和 <span class="arithmatex">\(\{ i\cdot d_i \}\)</span> 执行两种更新 <span class="arithmatex">\(update(left, right+1, val)\)</span>，<span class="arithmatex">\(inv\_update(left, right+1, val)\)</span></li>
+</ul>
+</li>
+<li><mark class="critic">扩展到二维</mark>：<ul>
+<li>单点修改 / 子矩阵查询：<span class="arithmatex">\(update(x, y, val)\)</span> (两层循环迭代更新)，<span class="arithmatex">\(sum(x_1, y_1, x_2, y_2)\)</span> (实现方法参照 二维前缀和)</li>
+<li>子矩阵修改 / 单点查询：依然借助差分思想<ul>
+<li>子矩阵修改：<span class="arithmatex">\(\sum\limits_{i=1}\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>权值树状数组：<ul>
+<li>权值树状 的定义：将一个数组 a[ ] 映射到一个大小为 <span class="arithmatex">\(a_i\)</span>的值域，记录 a[ ] 中元素出现次数的数组 （此时元素之间 <mark class="critic">出现的次序无关</mark>）<ul>
+<li>注意：若 a[ ] 的 <mark class="critic">值域过大</mark> 或 <span class="arithmatex">\(a_i \in Z\)</span> 或 <span class="arithmatex">\(a_i \in R\)</span>，可以先将 a[ ] 进行 <mark class="critic">有序离散变换</mark> 为 a'[ ] （此时，<span class="arithmatex">\(a_i'\)</span> 之间的值与其原值之间的相对大小有关）</li>
+</ul>
+</li>
+<li><mark class="critic">单点修改，全局第 k 小</mark>（数据随机）<ul>
+<li>第 k 小的数 w 满足一个性质：<span class="arithmatex">\(k = sum(1, w-1) + 1\)</span>，因此我们只需找到一个 x = w-1，满足 <span class="arithmatex">\(sum(1, x) &lt; k, \max\{ x \}\)</span>，x+1 即为所求</li>
+<li><mark class="critic">二分</mark>：<span class="arithmatex">\(sum(1, x) &lt; k\)</span>（假设 x 在解的左侧 并 没有找到；）</li>
+<li><mark class="critic">倍增</mark>：<ul>
+<li>从高位往低位贪心选取掩码累加到 x 中，此时 <span class="arithmatex">\(c_x\)</span> 对应区间 <span class="arithmatex">\([x-lb_x+1, x]\)</span> 内的贡献和，通过 <span class="arithmatex">\(c_x\)</span> 计算和更新与限制有关的函数 <span class="arithmatex">\(f_x\)</span></li>
+<li>如果 x 超过值域 或 新的 <span class="arithmatex">\(f_x\)</span> 不满足条件，则反悔
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>int x = 0;
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>for(int fx=0, ma=log2(N)+1; ma&gt;=0; --ma){
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    x += 1&lt;&lt;ma;
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>    if(x &gt; N || <mark class="critic">fx+ta[x] &gt;= k</mark>) x -= 1&lt;&lt;ma;
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>    else fx += ta[x];
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>}
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>return x + 1;
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><mark class="critic">不可差分运算(满足结合律)的处理</mark>：可以发现 支持差分的运算 都可以使用容斥原理处理区间查询，但该反命题不成立<ul>
+<li>我们考虑直接求解区间问题(不借助容斥)：<ul>
+<li>如果 <span class="arithmatex">\(l \le r\)</span>，则执行如下操作：（否则退出）</li>
+<li>若 <span class="arithmatex">\(l\le r_i-lb_{r_i}\)</span>，不断将当前的区间 <span class="arithmatex">\([l, r_i]\)</span> 拆解为 <span class="arithmatex">\([l, r_i-lb_{r_i}]\)</span> 和 <span class="arithmatex">\([r-lb_{r_i}+1, r_i]\)</span>，累计贡献</li>
+<li>若 <span class="arithmatex">\(l &gt; r_i-lb_{r_i}\)</span>，将区间 <span class="arithmatex">\([l, r_i]\)</span> 拆解为 <span class="arithmatex">\([l, r_i-1]\)</span> 和 <span class="arithmatex">\([r_i, r_i]\)</span>，累计贡献</li>
+</ul>
+</li>
+<li>模板：
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>void assign(int x, int v){
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    a[x] = v;
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>    for(int i=x; i&lt;N; i+=lb(i)){
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>        ta[i] = <mark class="critic">operate</mark>(a[x], ta[i]);
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>//      若树状数组没有使用 <mark class="critic">单位元</mark> 初始化，那么有必要使 x 的祖先重新通过他们的所有儿子来更新自己
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>//      ta[i] = a[i];
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>//      for(int j=1; j&lt;lb(i); j+=lb(j)){
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>//          ta[i] = max(ta[i], ta[i-j]);
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>//      }
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>    }
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>}
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>int query(int l, int r){
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>    int ans = 0;
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>    while(l &lt;= r){
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>        ans = <mark class="critic">operate</mark>(ans, a[r]);
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>        -- r;
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>        for(; l&lt;=r-lb(r); r-=lb(r)){
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>            ans = <mark class="critic">operate</mark>(ans, ta[r]);
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>        }
+<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>    }
+<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>    return ans;
+<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>}
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>树状数组能解决的问题 是 线段树能解决的问题的子集</li>
+<li>普通数组 借助 前缀和 和 差分 的思想也可以实现 区间查询 和 区间修改，只要不频繁从这两种切换中切换（即只支持 静态操作），而且每次操作都是 <span class="arithmatex">\(O(1)\)</span> 的</li>
+<li>树状数组 借助 差分的思想可以实现 区间查询 和 区间修改，与普通数组相比不足之处是 两种操作独立时后者效率更高，因为每次操作都是 <span class="arithmatex">\(O(\log n)\)</span> 的</li>
+</ul>
+</div>
+<div class="admonition 序列化">
+<p class="admonition-title">序列化</p>
+<ul>
+<li>将树序列化以使数线性化，模板如下：
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>vector&lt;vector&lt;int&gt;&gt; e;
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>bool st[N];
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>int L[N], R[N], id;
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>void lin(int x){
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>    if(st[x]) return ;
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>    st[x] = true;
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>    L[x] = ++id;
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>    for(int i=0; i&lt;e[x].size(); ++i) lin(e[x][i]);
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a>    R[x] = id;
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a>}
+</code></pre></div></li>
+</ul>
+</div>
+<p><a href="https://vjudge.csgrandeur.cn/contest/507968#overview">题链</a></p>
+<div class="admonition note">
+<p class="admonition-title">vj</p>
+<ul>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/A">A</a>：快速排序交换次数 = 逆序对个数 = <span class="arithmatex">\(\sum\limits_{i=1}^n \sum\limits_{j=1}^{i-1} [a_j &gt; a_i] = \sum\limits_{j=1}^n \sum\limits_{i=j+1}^n [a_i &gt; a_j]\)</span> (顺着搞 / 逆着搞 都行)<ul>
+<li>权值树状数组计算 二维偏序</li>
+<li>注意：有两层 sigma，所以要开 long long</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/B">B</a>：<span class="arithmatex">\(\sum\limits_{j=1}^{i-1} [x_j \le x_i, y_j \le y_i, x_i \ne x_j || y_i \ne y_j], i=1..n\)</span>，统计每个值的出现次数（可以注意到每个值都在 <span class="arithmatex">\(0..n-1\)</span> 以内）<ul>
+<li>注意：本题中不存在相同的点，即 <span class="arithmatex">\((x_i, y_i) = (x_{i-1}, y_{i-1})\)</span></li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/C">C</a>：二维树状数组模板</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/D">D</a>：<span class="arithmatex">\(\sum\limits_{j=1}^n [x_i \le x_j, y_i \ge y_j, y_i-x_i &lt; y_j-x_j], i = 1..n\)</span> <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(\sum\limits_{j=1}^n [x_i \le x_j, y_i \ge y_j, x_i\ne x_j || y_i\ne y_j], i = 1..n\)</span><ul>
+<li>可以看到三维偏序问题转化为了二维偏序问题</li>
+<li>两种做法<ul>
+<li>对 x 升序 y 降序，再顺着统计 <span class="arithmatex">\(\sum\limits_{j=1}^n [y_i \ge y_j, x_i\ne x_j || y_i\ne y_j], i = 1..n\)</span></li>
+</ul>
+</li>
+<li>注意：多组的 1e5 数据，建议用 scanf() / printf()</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/E">E</a>：<span class="arithmatex">\(\sum\limits_{j=1}^n [x_i &lt; x_j, y_i &gt; y_j]\)</span> 或 <span class="arithmatex">\(\sum\limits_{j=1}^n [x_i &gt; x_j, y_i &lt; y_j]\)</span><ul>
+<li>一种策略(最多8种策略)：x 升序 y 升序，再顺着统计 <span class="arithmatex">\(\sum\limits_{j=1}^n [y_i &lt; y_j]\)</span> (对于相同的 x，一定不满足条件)</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/F">F</a>：<span class="arithmatex">\(\max \{ sum(x_i, y_i, x_{i+w}, y_{i+h}) \}\)</span></li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/G">G</a>：二维树状数组模板</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/H">H</a>：二维树状数组 + 差分 (多点修改，单点查询) （异或运算）</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/I">I</a>：树上 单点修改，子树查询<ul>
+<li>利用 dfs 序将树 "序列化"，具体来说就是结点 i 映射到连续区间 <span class="arithmatex">\([lower_i, upper_i]\)</span> 上；序列化</li>
+<li><span class="arithmatex">\(lower_i\)</span> 表示 树上的结点 i 在树状数组上的结点id， <span class="arithmatex">\([lower_i+1, upper_i]\)</span> 表示 i 在树上的子结点在 树状数组上的区间id</li>
+<li>序列化后，普通的树就具有了树状数组操作的能力</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/549263#problem/J">J</a>：<span class="arithmatex">\(\sum\limits_{i=1}^n \sum\limits_{j=1}^{i-1} \max \{ v_j, v_i \} \cdot | x_j - x_i |\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">牛客</p>
+<ul>
+<li><a href="https://ac.nowcoder.com/acm/problem/14522">A</a>：给定序列 a[ ]，累加每个子区间的逆序对数 <span class="arithmatex">\(\displaystyle \sum\limits_{l=1}^n \sum\limits_{r=l}^n \sum\limits_{i=l}^r \sum\limits_{j=l}^i [a_j &gt; a_i]\)</span><ul>
+<li>观察式子，发现 <span class="arithmatex">\(1\le l \le j &lt; i \le r \le n\)</span>，我们考虑到将 i 和 j 提到最外层，就有</li>
+<li><span class="arithmatex">\(\displaystyle \sum\limits_{i=1}^n \sum\limits_{j=1}^{i-1} \sum\limits_{l=1}^j \sum\limits_{r=i}^n [a_j &gt; a_i] = \sum\limits_{i=1}^n \sum\limits_{j=1}^{i-1} j\cdot (n-i+1) [a_j &gt; a_i] = \sum\limits_{i=1}^n (n-i+1)\sum\limits_{j=1}^{i-1} j\cdot [a_j &gt; a_i]\)</span></li>
+<li>注意到这个式子可以用权值树状数组维护</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>二维偏序问题：（根据 x 和 y 符号方向的不同，每种偏序有4种情况）<ul>
+<li>普通偏序：<ul>
+<li><span class="arithmatex">\(\sum\limits_{j=1}^n [x_j &gt; x_i, y_j &gt; y_i]\)</span>：x 降序，y 升序，统计 <span class="arithmatex">\(sum(y_i+1, +∞)\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{j=1}^n [x_j &gt; x_i, y_j &lt; y_i]\)</span>：x 降序，y 降序，统计 <span class="arithmatex">\(sum(0, y_i-1)\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{j=1}^n [x_j &lt; x_i, y_j &gt; y_i]\)</span>：x 升序，y 升序，统计 <span class="arithmatex">\(sum(y_i+1, +∞)\)</span></li>
+<li><span class="arithmatex">\(\sum\limits_{j=1}^n [x_j &lt; x_i, y_j &lt; y_i]\)</span>：x 升序，y 降序，统计 <span class="arithmatex">\(sum(0, y_i-1)\)</span></li>
+</ul>
+</li>
+<li>不等偏序：<ul>
+<li><span class="arithmatex">\(\sum\limits_{j=1}^n [x_j \ge x_i, y_j \ge y_i, x_j\ne x_i || y_j\ne y_i]\)</span>：x 降序，y 降序，统计 <span class="arithmatex">\(sum(0, y_i)\)</span></li>
+<li>特殊处理：若 <span class="arithmatex">\((x_i, y_i) = (x_{i-1}, y_{i-1})\)</span>，则 i 的统计值为 i-1 的统计值</li>
+<li>其中还有其他3种类似情况</li>
+</ul>
+</li>
+<li>可等偏序：</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition 约定">
+<p class="admonition-title">约定</p>
+<ul>
+<li>二维偏序问题中：只对 x 先排序，并且顺着统计答案 （防止和 等价的策略 混淆）<ul>
+<li>某些情况下，可以转换成等价的策略</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="dp">背包dp</h3>
+<div class="admonition note">
+<p class="admonition-title">dp 模型</p>
+<ul>
+<li>模型示例： <span class="arithmatex">\(限制\cdots\)</span>，<span class="arithmatex">\(目标\cdots\)</span></li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/A">A</a>： <span class="arithmatex">\(\displaystyle \sum w_i \le w\_upper\)</span>，<span class="arithmatex">\(max\{1-\prod (1-v_i)\}\)</span>，<span class="arithmatex">\(v_i \in R\)</span><ul>
+<li><span class="arithmatex">\(v_i\)</span> 表示 某个事件 成功(得到offer) 的概率，最大化 x 个事件中 成功不少于一次 (成功0次的补事件) 的概率</li>
+<li>以 w 为dp的第二维，dp决策为：<span class="arithmatex">\(f_{i,j} = max\{f_{i-1, j}, 1-(1-f_{i-1, j-w_i})\cdot (1-v_i) \}\)</span> （不选 / 选）</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/B">B</a>： <span class="arithmatex">\(\displaystyle \prod (1-w_i) \ge 1-w\_upper\)</span>，<span class="arithmatex">\(max\{ \sum v_i \}\)</span>，<mark class="critic"><span class="arithmatex">\(w_i \in R\)</span></mark><ul>
+<li><span class="arithmatex">\(w_i\)</span> 表示 某个事件 成功(被抓) 的概率，最大化 x 个事件 成功0次 的概率</li>
+<li>由于 <span class="arithmatex">\(w_i \in R\)</span>，所以只能以 v 为dp的第二维，然后贪心求满足限制的</li>
+<li>dp决策： <span class="arithmatex">\(f_{i, j} = max\{ f_{i-1, j}, f_{i-1, j-v_j} \cdot (1-w_i) \}\)</span></li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/C">C</a>： <span class="arithmatex">\(\displaystyle \sum w_i\cdot a_i \le w\_upper\)</span>，<span class="arithmatex">\(max\{ \sum v_i\cdot a_i \}\)</span>，<span class="arithmatex">\(a_i = 0..A_i\)</span><ul>
+<li>优化：每种东西都有多个，一种策略是 将每种东西都 合理分割 为 <span class="arithmatex">\(A_i\)</span> 个东西，即 <span class="arithmatex">\(A_i = \sum a_i\)</span> （此处的 <span class="arithmatex">\(a_i\)</span> 即对应模型中的 <span class="arithmatex">\(a_i\)</span>，即每个新物品可以表示为 限制分量 <span class="arithmatex">\(w_i\cdot a_i\)</span> 和 目标分量 <span class="arithmatex">\(v_i\cdot a_i\)</span>）</li>
+<li>dp策略：使用该方法优化后与 01 背包一样</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/D">D</a>： <span class="arithmatex">\(\displaystyle \sum w_i\cdot a_i \le w\_upper\)</span>，<span class="arithmatex">\(max\{ \sum v_i\cdot a_i \}\)</span>，<span class="arithmatex">\(a_i = 0..+∞\)</span> (实际上 <span class="arithmatex">\(a_i = 0..\lfloor\frac {w\_upper}{w_i}\rfloor~~\&amp;~~w_i\ne 0\)</span>，即“完全背包”可以转化为 “多重背包”，但逆命题需要满足一定条件才成立)<ul>
+<li>dp策略优化： <span class="arithmatex">\(\begin{cases} f_{i, j} = \max\limits_{a=0..A_i} \{ f_{i-1, j-a\cdot w_i} + a\cdot v_i \} \\ f_{i, j-w_i} = \max\limits_{a=1..A_i} \{ f_{i-1, j-a\cdot w_i} + a\cdot v_i \} \end{cases}\)</span>，<span class="arithmatex">\(A_i = \lfloor\frac {w\_upper}{w_i}\rfloor-1\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(f_{i, j} = \max \{ f_{i-1, j}, f_{i, j-w_i} + v_i \}\)</span></li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/E">E</a>： <span class="arithmatex">\(\sum\limits_{i=1}^n v_i\cdot a_i  \le m\)</span>，<span class="arithmatex">\(CNT \{ \sum\limits_{i=1}^n v_i\cdot a_i \}\)</span>，<span class="arithmatex">\(a_i=0..A_i\)</span><ul>
+<li>一种策略：<mark class="critic">使用完全背包的方式迭代</mark>，对于第 i 个物品，开一个不滚动的数组 记录 <mark class="critic">第一次转移</mark> 到 j (即 限制分量累加<span class="arithmatex">\(\sum v\)</span>) 的 当前物品数量 (前提：这次转移后<mark class="critic">不会超过当前物品可用数量</mark>)</li>
+<li>不滚动的数组：指的是 每次迭代 物品(ID = i) 时都初始化一下该数组 (这种情况下可以不存储第一维——ID维)</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/F">F</a>： <span class="arithmatex">\(\sum a_i \ge 0\)</span>，<span class="arithmatex">\(\sum b_i \ge 0\)</span>，<span class="arithmatex">\(\max\{ \sum (a_i + b_i) \}\)</span>  &amp;  <span class="arithmatex">\(a_i \in Z, b_i \in Z\)</span><ol>
+<li><span class="arithmatex">\(a_i\)</span> 和 <span class="arithmatex">\(b_i\)</span> 都是整数域中的数，即两种 限制分量 <mark class="critic">都可以是负的</mark>，一种策略是将 <span class="arithmatex">\(a_i\)</span> 作为 限制分量，f 为 <span class="arithmatex">\(b_i\)</span> 的复合函数 （并且 由于<span class="arithmatex">\(\sum b_i \ge 0\)</span>，我们将其最大化）</li>
+<li><mark class="critic">注意点1</mark>：如果使用<mark class="critic">滚动数组</mark>，做 01 背包操作时，分两种情况：<ul>
+<li><span class="arithmatex">\(a_i \ge 0\)</span>：那么 <span class="arithmatex">\(j-a_i \le j\)</span>，第二维的遍历方向为 <mark class="critic">从右到左</mark> (<span class="arithmatex">\(w\_upper..a_i\)</span>)</li>
+<li><span class="arithmatex">\(a_i &lt; 0\)</span>：那么 <span class="arithmatex">\(j-a_i &gt; j\)</span>，第二维的遍历方向为 <mark class="critic">从左到右</mark> (<span class="arithmatex">\(0..w\_upper-|a_i|\)</span> 而非 <span class="arithmatex">\(|a_i|..w\_upper\)</span>)</li>
+<li>因为 从左到右 遍历时，仅当 <span class="arithmatex">\(x \ge j\)</span> 时，x 对应的是 上一个物品(ID = i-1) 的状态；反之亦然</li>
+</ul>
+</li>
+<li><mark class="critic">注意点2</mark>：由于 <span class="arithmatex">\(a_i\)</span> 可能为负整数，因而 <span class="arithmatex">\(\sum a_i\)</span> 也可能是负数，其上限是 <span class="arithmatex">\(O = N \cdot (-max\{|a_i|\})\)</span><ul>
+<li>我们将 O 作为数组的偏移量 以防止数组下标越界；此时坐标原点对应 <span class="arithmatex">\(O + 0\)</span>，x 点对应 <span class="arithmatex">\(O + x\)</span></li>
+<li>这种操作只应用于 dp数组，如 <span class="arithmatex">\(f \cdot\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/G">G</a>： <span class="arithmatex">\(\sum w_i\cdot a_i \ge w\_upper, \sum w_i\cdot a_i - \sum w_j\cdot b_j = w\_upper, \min \{ \sum a_i + \sum b_j \}\)</span>    &amp;    <span class="arithmatex">\(a_i \le c_i, b_j &lt; +∞\)</span><ul>
+<li>注意到 <span class="arithmatex">\(a_i\)</span> 有数量限制，而 <span class="arithmatex">\(b_j\)</span> 没有</li>
+<li>对 <span class="arithmatex">\(\sum w_i\cdot a_i\)</span> 和 <span class="arithmatex">\(\sum w_j\cdot b_j\)</span> <mark class="critic">最小化</mark> 求解 多种背包 <span class="arithmatex">\(f\)</span> 和 完全背包 <span class="arithmatex">\(g\)</span>，</li>
+<li>遍历获取 <span class="arithmatex">\(\min \{ f_i + g_{i-w\_upper} \}\)</span>，其中 <span class="arithmatex">\(i \ge w\_upper\)</span></li>
+<li>注意：背包应该计算确切值 (f 和 g 应该初始化为 inf，零点处初始化为0)；方程不一定有解</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/H">H</a>： <span class="arithmatex">\(\sum (j - w_i)\cdot v_i \cdot a_i \ge L, \min \{ j \}\)</span>  &amp;  <span class="arithmatex">\(a_i &lt; +∞\)</span>（<span class="arithmatex">\(\sum w_i\cdot a_i \le j\)</span>）<ul>
+<li>其实质是一个 完全背包， <span class="arithmatex">\((j - w_i)\cdot v_i\)</span> 作为目标分量，<span class="arithmatex">\(w_i\)</span> 作为限制分量</li>
+<li>注意：不精确计算值（f 初始化为 0）</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/548771#problem/I">I</a>： <span class="arithmatex">\(\sum w_i\cdot a_i == w\_upper, \max\{ a_i \}\)</span>  &amp;  <span class="arithmatex">\(a_i &lt; +∞\)</span><ul>
+<li>注意：可能没有解，但是题目指明至少有一个解</li>
+</ul>
+</li>
+</ul>
+</div>
+<pre class="mermaid"><code>graph LR
+a(01背包)
+b(多重背包)
+c(完全背包)
+b --&gt; a
+c --&gt; b</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>仅当 “限制” 或 “目标” 是一个整数时，可以用 01 背包<ul>
+<li>通常 “限制” 作为dp的第二维，dp 是 “目标”的复合函数  &amp;  仅当 “限制” 是整数</li>
+<li>有时 “目标” 作为dp的第二维，dp 是 “限制”的复合桉树  &amp;  仅当 “目标” 是整数，最后用贪心求满足 “限制” 下的 “目标” 值</li>
+</ul>
+</li>
+<li>01背包 是离散背包（一个物品只取1整个），只能用 dp；一般背包 是连续背包，只能用贪心</li>
+<li>易错<ol>
+<li>dp 数组一定要初始化；普通的数组，如 <code>vector&lt;int&gt;</code> 在使用前应该初始化</li>
+<li>滚动数组时，经常要定义 <span class="arithmatex">\(f[0]\)</span> 的取值；此外，不滚动也要初始化<ul>
+<li>区分 最大化 和 最小化 时的取值行为！！！</li>
+</ul>
+</li>
+<li>有时把 限制分量 和 目标分量 搞反</li>
+</ol>
+</li>
+<li>f 应该开多大？<ul>
+<li>普通情况下，申明方式为 <span class="arithmatex">\(f[N][N*W]\)</span>，即需要 <span class="arithmatex">\(N^2*\cdot W\)</span> 的空间 （W 指的是 限制分量 的值域）</li>
+<li>滚动后，声明为 <span class="arithmatex">\(f[N*W]\)</span>，即需要 <span class="arithmatex">\(N\cdot W\)</span> 空间</li>
+</ul>
+</li>
+<li>关于 限制分量 <span class="arithmatex">\(a_i\)</span> 的值域：<ol>
+<li>若 <span class="arithmatex">\(a_i \in N\)</span>： 那么 <span class="arithmatex">\(a_i\)</span> 可以求解满足 <span class="arithmatex">\(\sum a_i \le X\)</span> 的问题</li>
+<li>若 <span class="arithmatex">\(a_i \in Z\)</span>： 那么 f 的第二维的空间加上偏移 O，至少满足 <span class="arithmatex">\(O = N \cdot |min\{a_i\}|\)</span>，如：原点变为 <span class="arithmatex">\(O + 0\)</span>，点 <span class="arithmatex">\(x\)</span> 变为 <span class="arithmatex">\(O + x\)</span>，那么问题就转化为 “1” 了</li>
+<li>若 <span class="arithmatex">\(a_i \in R\)</span>：<ul>
+<li>如果要求目标的是 最大化 或 最小化，并且 目标分量 <span class="arithmatex">\(b_i \notin R\)</span>，那么可以将分量的关系互换</li>
+<li>如果 <span class="arithmatex">\(\sum a_i\)</span> 有下限，那么我们将其 最大化；如果 <span class="arithmatex">\(\sum a_i\)</span> 有上限，那么我们将其 最小化</li>
+<li>最后 <mark class="critic">贪心</mark> 求 <span class="arithmatex">\(\sum b_i\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>滚动数组的 迭代 做法怎么映射到 递归 的做法上？</li>
+<li>为什么可以默认认为 <span class="arithmatex">\(f_j\)</span> 和 <span class="arithmatex">\(f_{j-w_i}\)</span> 存在？</li>
+<li>"恰好"类型的问题：初始化 <span class="arithmatex">\(f\)</span> 为 <span class="arithmatex">\(inf\)</span> 或 <span class="arithmatex">\(-inf\)</span>，将 <span class="arithmatex">\(f[1..n][0]\)</span> 初始化为合适的值</li>
+</ul>
+</div>
+<div class="admonition 约定">
+<p class="admonition-title">约定</p>
+<ul>
+<li>w / v - 限制分量 / 目标分量</li>
+<li>c - 多重背包的物品数</li>
+<li>mw / mv / mc - 多重背包 二进制优化，一般比原数组大 20 倍；分别表示 限制分量 / 目标分量 / 物品数</li>
+<li>a / b - 不明确的分量 (关系可以互换) 或 用于逻辑上表示物品的系数（即所取的物品数）</li>
+</ul>
+</div>
+<h3 id="dp_1">区间dp</h3>
+<div class="admonition 理论">
+<p class="admonition-title">理论</p>
+<ul>
+<li>特点：合并（将多个部分整合，也可以反过来？）；能将问题分解为两两合并的形式；求解：</li>
+<li>对于闭区间：合并的方程为 <span class="arithmatex">\(f_{i, j} = \max \{ f_{i, x} \circ f(x+1, j) \circ g_{i, x, j} \}\)</span></li>
+<li>设 d 为区间 [l, r] 的长度，即 d = r-l+1</li>
+<li>考虑两件事：答案是否可以合并？区间是否需要拓展状态？合并哪些区间？题目是否给定了转移的限制？</li>
+<li>划分类型<ul>
+<li><span class="arithmatex">\([l, x] \circ [x+1, r-1] \circ [r], x\in[l, r), a_x=a_r\)</span></li>
+<li><span class="arithmatex">\([l, x] \circ [x+1, r], x\in [l, r)\)</span></li>
+<li><span class="arithmatex">\([l, x] \circ [x, r], x\in (l, r)\)</span></li>
+<li><span class="arithmatex">\([l] \circ [l+1, x] \circ [x+1, r], x\in [l, r]\)</span>，<span class="arithmatex">\([l, x] \circ [x+1, r-1] \circ [r], x\in [l, r]\)</span></li>
+<li><span class="arithmatex">\([l] \circ [l+1, r]\)</span>，<span class="arithmatex">\([l, r-1] + [r]\)</span></li>
+<li>计数：<span class="arithmatex">\([l, g_l] \circ [g_l+1, r], g_l\ne r\)</span> 或 <span class="arithmatex">\([l, g_r-1] \circ [g_r, r], g_r\ne l\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition 洛谷">
+<p class="admonition-title">洛谷</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P1880">A</a>：给定 n 堆物品(每堆初始数量为 1)，这些物品循环成链，相邻的两堆合并的贡献是 两堆物品权值之和，输出所有堆合并 最大/最小 贡献之和</li>
+<li><a href="https://www.luogu.com.cn/problem/P1063">B</a>：给定 n 个权值，<span class="arithmatex">\(a_{i}\)</span> 和 <span class="arithmatex">\(a_{(i+1)\%n}\)</span> 构成第 i 个物品 (循环成链)，合并物品 i-1 和 i，得到贡献 <span class="arithmatex">\(a_{(i-1)\%n} \cdot a_i \cdot a_{(i+1)\%n}\)</span>，生成的新物品由 <span class="arithmatex">\(a_{i-1}\)</span> 和 <span class="arithmatex">\(a_{i+1}\)</span> 构成<ul>
+<li>两个物品 i-1 和 i 的合并可以抽象为：[i-1, i+1] = [i-1, i] + [i, i+1] + <span class="arithmatex">\(a_{(i-1)\%n} \cdot a_i \cdot a_{(i+1)\%n}\)</span></li>
+</ul>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P1005">C</a>：给定一个矩阵，第 k 次从矩阵的每一行的左右两端取一个数 x，总共取 n 次，每次贡献 <span class="arithmatex">\(2^k \cdot x\)</span>，执行 m 次后必定刚好取完，求最大的贡献之和<ul>
+<li>可以分析出多个行之间取数的顺序相互独立，我们只要重点关注第 i 行取数 m 次的情况</li>
+<li><span class="arithmatex">\(d \ge 2\)</span> 时，<span class="arithmatex">\([l, r] = max{ [l+1, r] + 2^{m-d+1}, [l, r-1] + 2^{m-d+1} }\)</span></li>
+<li>d = 1 时，<span class="arithmatex">\([l, r] = 2^m\)</span></li>
+</ul>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P4767">D</a>：</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">vjudge</p>
+<ul>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/B">B</a>：给定 n 个数 和 一个栈，要求从左到右遍历这 n 个数，遍历到第 i 个数时，栈必须 加入一个数(贡献为 1) 或 出栈 y 个数(贡献为 0) 使得 <mark class="critic"><span class="arithmatex">\(栈顶 = a_i\)</span></mark>；最小化遍历完 n 个数后的贡献之和<ul>
+<li>默认使用区间dp（原理不明）</li>
+<li>若 d = 1， <span class="arithmatex">\(f_{l, r} = 1\)</span></li>
+<li>若 d &gt; 1，$f_{l, r} $有两种选择：（从“如何使 <span class="arithmatex">\(栈顶=a_r\)</span>” 来考虑区间怎么划分）<ol>
+<li><span class="arithmatex">\(f_{l, r-1}\)</span> 总是可以入栈一个数，合并区间 [l, r-1] 和 [r, r]</li>
+<li>若 <span class="arithmatex">\(a_x = a_r\)</span> (<span class="arithmatex">\(l \le x \le r-1\)</span>)，我们选择出栈 <span class="arithmatex">\([x+1, r-1]\)</span> 内的 r-x-1 个数 (贡献为 0)，合并区间 [l, x] 和 [x+1, r-1] 以及 [r, r]</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/C">C</a>：给定一个可能非法的括号序列，求出 最长的合法括号<mark class="critic">子序列</mark> 的长度<ul>
+<li>性质：子序列的贡献可以合并；</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/D">D</a>：给定一个合法的括号序列，计算着色方案总数；限制：可以不染色 / 染红色 / 染蓝色，匹配的括号有且仅有一个染色(限制2)，相邻括号颜色不同(限制3)  (N = 700)<ul>
+<li>注意到相邻括号颜色不同的限制，若直接用 <span class="arithmatex">\(f_{l, r}\)</span> 表示区间内的方案数，那么就难以从小的区间转移到 <span class="arithmatex">\(f_{l, r}\)</span></li>
+<li>一个合理的状态是 <span class="arithmatex">\(f_{l, r, x, y}\)</span> 表示 [l, r] 区间中，左右括号颜色分别为 x, y 的方案 (<span class="arithmatex">\(x, y \in 0..2\)</span>)<ul>
+<li>限制2构成的合法状态有：01, 02, 10, 20</li>
+<li>限制3排除的合法状态：1-1, 2-2</li>
+</ul>
+</li>
+<li>若 d = 1，没有方案</li>
+<li>若 d = 2，01, 02, 10, 20 均有 1 个方案</li>
+<li>若与 <span class="arithmatex">\(s_l\)</span> 匹配的是 <span class="arithmatex">\(s_r\)</span>：说明 <span class="arithmatex">\(f_{l, r}\)</span> 没有更新过状态，此时从 <span class="arithmatex">\(f_{l+1, r-1}\)</span> 中更新状态</li>
+<li>若与 <span class="arithmatex">\(s_l\)</span> 匹配的不是 <span class="arithmatex">\(s_r\)</span>：则 <span class="arithmatex">\(f_{l, r}\)</span> 从 <span class="arithmatex">\(f_{l, g_l}\)</span> 和 <span class="arithmatex">\(f_{g_l+1, r}\)</span> 中更新状态</li>
+<li>注：另开一个数组，存储对于 i，与其匹配的右括号 （反着来也可以），否则会 TLE</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/E">E</a>：</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/F">F</a>：外卖骑手初始位于一维坐标的 p 点，车子骑行每米花费 v 秒；n 个点餐者位于 <span class="arithmatex">\(x_i\)</span> 处，并同时点餐，而且每过 1 秒贡献 <span class="arithmatex">\(a_i\)</span> 的不满度；最小化不满度之和<ul>
+<li>假设骑手每次送完外卖后(除了初始点外)，总是停在区间端点处（<mark class="critic">如何证明</mark>？）</li>
+<li>那么，容易定义区间 [l, r] 的状态为 <span class="arithmatex">\(f_{l, r, s}\)</span> (<span class="arithmatex">\(s=0..1\)</span>)，s 指骑手在 左端点 或 右端点 的状态</li>
+<li>若 d = 1，</li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/G">G</a>：给定 n 个人的队列，每个人(id=i) 出队都会贡献 <span class="arithmatex">\(k\cdot a_i\)</span>（k 为在此人之前出队的总人数）；再给一个栈，用来颠倒队列某个区间内的出队顺序 (由于栈的 先进后出 原理)，栈可以使用多次；最小化贡献之和<ul>
+<li>决策：<span class="arithmatex">\([l]+[l+1,x]+[x+1,r] \to [l+1,x]+[l]+[x+1,r]\)</span> (<span class="arithmatex">\(x\in [l, r]\)</span>) （颠倒 [l, x] 的顺序让 x 最先出队）</li>
+<li>d = 1, <span class="arithmatex">\(f_{l, r} = 0\)</span></li>
+<li>d &gt; 1, <span class="arithmatex">\(f_{l, r} = \min\{ f_{l+1, x} + a_l\cdot(x-l) + f_{x+1, r}+\sum\limits_{i=l}^x a_i \cdot(x-l+1) \}\)</span></li>
+</ul>
+</li>
+<li><a href="https://vjudge.csgrandeur.cn/contest/551198#problem/H">H</a>：给定两个字符串 a 和 b，每次可以将 a 的一段连续的子串修改为同一个字符，求将 a 转换为 b 的最小修改次数<ol>
+<li><span class="arithmatex">\(f_{l, r}\)</span> 为将空串转化为 b 的最小次数</li>
+<li><span class="arithmatex">\(g_i\)</span> 为将 a 的某段前缀转化为 b 的前缀的最小次数</li>
+</ol>
+</li>
+</ul>
+</div>
+<h3 id="dp_2">dp优化</h3>
+<div class="admonition note">
+<p class="admonition-title">1. 滚动数组</p>
+<ul>
+<li>若 <span class="arithmatex">\(f_{i, j}\)</span> 只由 <span class="arithmatex">\(f_{i-1, k}, k\le j\)</span> 或 <span class="arithmatex">\(f_{i-1, k}, k\ge j\)</span> 转化而来，那么可以滚动成 <span class="arithmatex">\(f_j\)</span> （此时应注意遍历顺序）</li>
+<li>若 <span class="arithmatex">\(f_{i, j}\)</span> 有 <span class="arithmatex">\(f_{i-x, y}, x\ge 0, y\in Z\)</span> 转化而来，那么第一维可以压缩为 r = max{x}+1 层，即滚动为 <span class="arithmatex">\(f_{(i-x)\% r, y}\)</span></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. 单调队列优化</p>
+<ul>
+<li>解决的问题，如：<span class="arithmatex">\(f_i = \max\{ f_{i'} + g_{i} + h_{i'} \}\)</span></li>
+<li>适用于 前缀dp 中，优化计算上一个状态的某一连续区间的最优值（即 RMQ 操作），STL中使用 <code>deque</code> 维护</li>
+<li>定义：<ul>
+<li>初始化：l=1, r=0；队列为空：l &gt; r</li>
+<li>尾部查询：<span class="arithmatex">\(q_r\)</span>；尾部入队：q[++r] = val</li>
+<li>头部查询：<span class="arithmatex">\(q_l\)</span></li>
+<li>维护区间：<span class="arithmatex">\([q_l, pos]\)</span>，维护的区间长度：<span class="arithmatex">\(pos-q_l+1\)</span>，维护的子序列长度 = <span class="arithmatex">\(q.size()\)</span></li>
+<li>区间端点一般满足限制：<span class="arithmatex">\(q_l \ge i-left\_len\)</span>，<span class="arithmatex">\(pos \le i+right\_len\)</span></li>
+</ul>
+</li>
+<li>模板(伪代码) （维护区间 <span class="arithmatex">\([i-left_len, i+right_len]\)</span> 的子序列；以求 最大值(单调递减) 为例）
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>for(int i=1; i&lt;=n; ++i){
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>    for(; pos&lt;=min(n, i+right_len); ++pos){
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>        for(;; --r) if(l&gt;r || f o q[r] &gt; f o pos) break; // 维护单调性
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>        q[++r] = pos;
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>    }
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>    for(; q[l]&gt;=max(1, i-left_len); ++l);
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>    output -&gt; f o q[l]
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a>}
+</code></pre></div></li>
+<li>优化多重背包：<span class="arithmatex">\(\displaystyle f_{i, j} = \max\{ f_{i-1, j-k\cdot w_i} + k\cdot v_i \}, k\in[0,\min\{ c_i,\frac {max\_w}{v_i} \}]\)</span><ul>
+<li>令 <span class="arithmatex">\(j = d + K_0\cdot w_i\)</span>，其中 <span class="arithmatex">\(K_0\)</span> 为 <span class="arithmatex">\(f_{i,j}\)</span> 枚举 k 后得到最优解，并且<span class="arithmatex">\(K\in []\)</span>，<span class="arithmatex">\(d\in [0, w_i)\)</span>，</li>
+<li>那么 <span class="arithmatex">\(\displaystyle f_{i, d + K_0\cdot w_i} = \max\{ f_{i-1,d+K_0\cdot w_i-k\cdot w_i} +k\cdot v_i\} = \max\{ f_{i-1,d+(K_0-k)w_i} -(K_0-k)\cdot v_i\} + K_0\cdot v_i\)</span></li>
+<li>令 <span class="arithmatex">\(x = K_0 - k\)</span>，得到 <span class="arithmatex">\(\displaystyle \max\{ f_{i-1,d+x\cdot w_i} -x\cdot v_i\} + K_0\cdot v_i\)</span>，其中 <span class="arithmatex">\(d\in[0, w_i)\)</span>，<span class="arithmatex">\(d+K_0\cdot w_i \le max\_w\)</span></li>
+<li>我们分别枚举 d 和 <span class="arithmatex">\(K_0\)</span>，使用单调队列维护 x (即<span class="arithmatex">\(q_l\)</span>)（限制为 <span class="arithmatex">\(K_0-x = k \le c_i\)</span>）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="highlight"><span class="filename">模板</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>for(int i=1; i&lt;=n; ++i){
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>    int v, w, s;
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>    cin &gt;&gt; v &gt;&gt; w &gt;&gt; s;
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>    for(int d=0; d&lt;v; ++d){
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>        int l=1,r=0;
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>        for(int K0=0, j; j=K0*v+d, j&lt;=m; ++K0){
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>            #define val(x) (g[d + x * v] - x * w)
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>            for(;; --r) if(l&gt;r || val(q[r]) &gt; val(K0)) break;
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a>            q[++r] = K0;
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a>            for(;; ++l) if(l&gt;r || K0-q[l] &lt;= s) break;
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a>//              cout &lt;&lt; K0 &lt;&lt; ' ' &lt;&lt; q[l] &lt;&lt; '\n';
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a>            f[j] = val(q[l]) + K0 * w;
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a>        }
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a>    }
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a>    memcpy(g, f, sizeof f);
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a>}
+</code></pre></div>
+<p>参考：<a href="https://blog.csdn.net/jisuanji2606414/article/details/123384333">A</a></p>
+<div class="admonition 练习">
+<p class="admonition-title">练习</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P2254">A</a>：给定01矩阵 <span class="arithmatex">\(n \times m\)</span>，初始位置 <span class="arithmatex">\((s, t)\)</span>，K 次可向上下左右四个方向(以 1~4 标识)移动最大距离 <span class="arithmatex">\(d_i\)</span>，求最大移动距离；限制：地图上为 0 的点不可走<ul>
+<li>容易得到状态： <span class="arithmatex">\(f_{k, x, y}\)</span> 为前 k 次移动后达到 (x, y) 的最大移动距离</li>
+<li>转移方程： <span class="arithmatex">\(f_{k, x, y} = \max \{ f_{k-1, x', y'} \}\)</span>，<span class="arithmatex">\(|x-x'|\le d_i, |y-y'|\le d_i\)</span> （具体有四种可能的转移状态）</li>
+<li>单调队列优化后的复杂度：<span class="arithmatex">\(O(K\cdot N\cdot M)\)</span></li>
+</ul>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P2569">B</a>：n 天以内，最多持有 m 个股票；每一天都有 买入股票价格 <span class="arithmatex">\(a_i\)</span> 和 买入限制数量 <span class="arithmatex">\(la_i\)</span>，卖出股票价格 <span class="arithmatex">\(b_i\)</span> 和 卖出限制数量 <span class="arithmatex">\(lb_i\)</span>；另外，交易(买入/卖出 股票)时间至少要间隔 w 天（假设有两个交易日 i 和 j，其中 <span class="arithmatex">\(i\le j-w-1\)</span>）<ul>
+<li>决策：不转移 / 重新开始，转移但不交易 (<span class="arithmatex">\(f_{i,j} = f_{i-1, j}\)</span>)，转移&amp;交易</li>
+<li><span class="arithmatex">\(f_{i, j} = \max \begin{cases} - j\cdot a_i &amp; j\le la_i \\ f_{i-1, j} \\ f_{i-w-1, j'} - |j-j'|\cdot a_i &amp;  i &gt; w+1, j-j' \le la_i \\ f_{i-w-1, j'} + |j-j'|\cdot b_i &amp; i &gt; w+1, j'-j\le lb_i \end{cases}\)</span>，<span class="arithmatex">\(f_{0,j}=-∞\)</span> (即第 0 天不可转移)</li>
+<li>注意：第一种情况的 <span class="arithmatex">\(j\le la_i\)</span> 并不意味着决策的复杂度是 <span class="arithmatex">\(O(1)\)</span>，相反，它是常数的；最后两种决策复杂度是 <span class="arithmatex">\(O(n)\)</span> 的，用根据 j-j' 的正负号决定单调队列优化的遍历方向是正还是负</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>多重背包的模型是 <span class="arithmatex">\(f_{i,j} = \max \{ f_{i-1,j-k\cdot w_i} + k\cdot v_i \}\)</span>，不属于 <span class="arithmatex">\(f_{i,j} = \max \{ f_{i-1, j'} + g_{j} + h_{j'} \}\)</span> （单调队列可以优化<strong>与某一个维度耦合的决策过程</strong>）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. 斜率优化</p>
+<ul>
+<li>解决的dp问题 (1D/2D)，如：<mark class="critic"><span class="arithmatex">\(f_i = \max \{ f_j + g_i + s_i\cdot t_j \}\)</span></mark>（该式子需要通过一定的数学代换；由于存在 i 与 j 耦合的式子，所以单纯的单调队列无法解决）</li>
+<li>得到类似 <span class="arithmatex">\(f_i - g_i = \max \{ f_j - t_i\cdot s_j \}\)</span> 的形式后，式子类似于 <span class="arithmatex">\(b_i = y_j - k_i\cdot x_j\)</span>（注意：对于当前的 i，<span class="arithmatex">\(k_i\)</span> 为定值，<span class="arithmatex">\(y_j\)</span> 和 <span class="arithmatex">\(x_j\)</span> 为当前枚举值，用于计算 <span class="arithmatex">\(b_i\)</span>）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">模板(以最大化为例，最小化)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>double k(int i, int j){
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>    #define Y(x) (...)
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>    #define X(x) (...)
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>    if(X(i)==X(j)) return <mark class="critic">1e18</mark>;   // -1e18
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>    return (Y(j)-Y(i))/(.0 + X(j)-X(i));
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>int l=1,r=0;
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>for(int i=1; i&lt;=n; ++i){
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>    #define K(x) (...)
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>    #define B'(x) (...)
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>    for(;; ++l) if(l+1&gt;r || k(q[l], q[l+1]) <mark class="critic">&lt;</mark> K(i)) break;
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a>    // 记录 答案 或 具体方案
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>    f[i] = Y(q[l]) - X(q[l]) * K(i) - B'(i); // 或者
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a>    for(;; --r) if(l+1&gt;r || k(q[r-1], q[r]) <mark class="critic">&gt;</mark> k(q[r], i)) break;
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>    q[++r] = i;
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a>}
+</code></pre></div>
+</div>
+<div class="admonition 练习">
+<p class="admonition-title">练习</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P3648">A</a>：<span class="arithmatex">\(f_{i,j} = \max \{ f_{i-1, j'} + s_{j'}(s_j - s_{j'}) \}\)</span> （s[ ] 为 a[ ] 的前缀和）<ul>
+<li>朴素dp的复杂度是 <span class="arithmatex">\(O(N\cdot M^2)\)</span></li>
+</ul>
+</li>
+<li><a href="https://www.luogu.com.cn/problem/P3195">B</a>：</li>
+<li><a href="https://www.luogu.com.cn/problem/P4072">C</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P3628">D</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P5504">E</a></li>
+<li><a href="http://codeforces.com/problemset/problem/311/B">F</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P4027">G</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P5468">H</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P1721">I</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P2305">J</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. 平行四边形优化</p>
+<ul>
+<li>解决的问题，例如：石子合并问题 <span class="arithmatex">\(f_{l, r} = \max \{ f_{l, x} + f_{x+1, r} \} + w_{l, r}\)</span>，(<span class="arithmatex">\(x\in [l, r)\)</span>)</li>
+<li>性质<ol>
+<li><mark class="critic">区间包含单调性</mark>：对于 <span class="arithmatex">\(l \le l' \le r' \le r\)</span>，均有 <span class="arithmatex">\(w_{l', r'} \le w_{l, r}\)</span> 成立，则称函数 <code>w</code> 对于区间包含关系</li>
+<li><mark class="critic">四边形不等式</mark>：对于任意 <span class="arithmatex">\(l_1 \le l_2 \le r_1 \le r_2\)</span>，均有 <span class="arithmatex">\(w_{l_1, r_1} + w_{l_2, r_2} \le w_{l_1, r_2} + w_{l_2, r_1}\)</span> （非形式化地描述为 「交叉不大于包含」）</li>
+</ol>
+</li>
+<li>记号：<ul>
+<li><span class="arithmatex">\(g_{x,l,r} = f_{l,x} + f_{x+1, r} + w_{l, r}\)</span> 表示当决策为 k 时的状态值</li>
+<li>任取 <span class="arithmatex">\(l_1\le l_2 \le r_1 \le r_2\)</span>，记 <span class="arithmatex">\(u = \arg \min\{ g_{x,l_1,r_2} \}, v = \arg \min \{ g_{x, l_2, r_1} \}\)</span> 分别表示状态 <span class="arithmatex">\(f_{l_1, r_2}\)</span> 和 <span class="arithmatex">\(f_{l_2, r_1}\)</span> 的最小最优决策点</li>
+<li>记 <span class="arithmatex">\(m_{l,r} = \min \{ x: f_{l,r} = g_{x,l,r} \}\)</span> 为 f 的最优决策点</li>
+</ul>
+</li>
+<li>定理<ol>
+<li>若 <span class="arithmatex">\(w_{l, r}\)</span> 满足区间包含 单调性 和 四边形不等式，则状态 <span class="arithmatex">\(f_{l,r}\)</span> 满足四边形不等式 （<a href="https://oi-wiki.org/dp/opt/quadrangle/">证明</a>）</li>
+<li>假设 f 满足四边形不等式，若 <span class="arithmatex">\(m_{l, r} = \min \{ x: f_{l,r} = g_{x,l,r} \}\)</span> 为最优决策点，则有 <span class="arithmatex">\(m_{l, r-1} \le m_{l,r} \le m_{l+1,r}\)</span>  (l + 1 &lt; r)</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="admonition 练习">
+<p class="admonition-title">练习</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P4767">A</a></li>
+<li><a href="https://codeforces.com/contest/321/problem/E">B</a></li>
+<li><a href="https://www.spoj.com/problems/LARMY/">C</a></li>
+<li><a href="https://www.codechef.com/problems/CHEFAOR">D</a></li>
+<li><a href="https://www.hackerrank.com/contests/ioi-2014-practice-contest-2/challenges/guardians-lunatics-ioi14">E</a></li>
+<li><a href="https://open.kattis.com/problems/money">F</a></li>
+</ul>
+</div>
+<div class="admonition 参考">
+<p class="admonition-title">参考</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/training/5352#problems">题单</a></li>
+<li><a href="https://www.cnblogs.com/flashhu/p/9480669.html">dp各种优化</a></li>
+<li><a href="https://oi-wiki.org/misc/garsia-wachs/#%E6%9C%80%E4%BC%98%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91">Garsia-Wachs</a>，<a href="https://blog.csdn.net/jk_chen_acmer/article/details/79343530">Garsia-Wachs</a></li>
+</ul>
+</div>
+<div class="admonition else">
+<p class="admonition-title">Else</p>
+<ul>
+<li>带权二分、FFT分治、CDQ分治优化、FFT分治优化、CDQ分治优化，平衡树优化、wqs二分，带权二分、Garsia-Wachs</li>
+</ul>
+</div>
+<h3 id="st">ST表</h3>
+<ul>
+<li>理论：<ul>
+<li>用于静态维护 <mark class="critic">可重复贡献运算</mark> 区间信息</li>
+<li>支持的运算应满足：<mark class="critic">可重复贡献</mark>，<mark class="critic">结合律</mark><ul>
+<li>如：按位与(&amp;)，按位或(|)，gcd</li>
+</ul>
+</li>
+<li>定义 <span class="arithmatex">\(f_{i, j}\)</span> 为区间 <span class="arithmatex">\([i, i+2^{j})\)</span> 的信息，operate(-, -) 为可重复贡献的二元运算<ul>
+<li>像 <span class="arithmatex">\([x, x+f_{x}]\)</span> 定义区间的方式可以理解为 <mark class="critic">"增量定义区间"</mark> 或 <mark class="critic">"倍增划分区间"</mark></li>
+<li>状态方程：<span class="arithmatex">\(f_{i, j} = operate(f_{i, j-1}, f_{i+2^{j-1}, j-1}), f_{i, 0} = a_i\)</span></li>
+<li>查询区间信息：<span class="arithmatex">\(query(l, r) = operate(f_{l, \lfloor \log2(r-l+1)\rfloor}, f_{r-2^{\lfloor \log2(r-l+1)\rfloor}, \lfloor \log2(r-l+1)\rfloor})\)</span><ul>
+<li>简记为 <span class="arithmatex">\(query(l, r) = operate(f_{l, \Delta}, f_{r-2^{\Delta}, \Delta}), \Delta = \lfloor \log2(r-l+1)\rfloor\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">双指针</h3>
+<h3 id="_5">哈希</h3>
+<div class="admonition 理论">
+<p class="admonition-title">理论</p>
+<ul>
+<li>哈希有两个关键：转化信息为一个整数(即通过 哈希函数 得到 哈希值)，通过哈希值统计该信息的关联信息（出现次数，具有该信息的 id 集合）</li>
+<li>哈希一般用于计算 “非寻常信息”，如 字符串，字符矩阵，整数点坐标，大整数，离散化</li>
+</ul>
+</div>
+<div class="highlight"><span class="filename">字符数组哈希函数</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>#define ll unsigned long long
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>#define A 3
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>#define B 7
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>ll P[N][N], X[N], Y[N];
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>void mk(char a[][N], int n, int m){
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>    FOR(i, 1, n) FOR(j, 1, m){
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>        P[i][j] = P[i-1][j] * A + a[i][j] - 'a';
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>    }
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>    FOR(i, 1, n) FOR(j, 1, m){
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>        P[i][j] = P[i][j-1] * B + P[i][j];
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a>    }
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a>
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a>    X[0] = Y[0] = 1;
+<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a>    FOR(i, 1, n) X[i] = X[i-1]*A;
+<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a>    FOR(i, 1, m) Y[i] = Y[i-1]*B;
+<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a>}
+<a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a>ll qu(int x, int y, int x1, int y1){
+<a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a>    return P[x][y]-P[x1][y]*X[x-x1]-P[x][y1]*Y[y-y1]+P[x1][y1]*X[x-x1]*Y[y-y1];
+<a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a>}
+<a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a>map&lt;ll, int&gt; h;
+</code></pre></div>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Vp" class="md-footer__link md-footer__link--prev" href="../vp/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Vp
+              </div>
+</div>
+</a>
+<a aria-label="Next: 题目" class="md-footer__link md-footer__link--next" href="../%E9%A2%98%E7%9B%AE/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                题目
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 travis
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../res/extra.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
