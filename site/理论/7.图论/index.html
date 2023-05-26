@@ -8,7 +8,7 @@
 <link href="../6.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev"/>
 <link href="../8.%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/" rel="next"/>
 <link href="https://static.javatpoint.com/perl/images/perl-home.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
 <title>7.图论 - algo</title>
 <link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
@@ -155,13 +155,18 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/dp/">
+        刷题记录
+      </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../%E6%A6%82%E8%AE%BA/%E8%87%AA%E7%94%B1%E6%8E%A2%E7%B4%A2/">
         概论
       </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../1.%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95/">
-        概念
+        理论
       </a>
 </li>
 <li class="md-tabs__item">
@@ -195,11 +200,41 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-          概论
+          刷题记录
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          刷题记录
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/dp/">
+        Dp
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%95%B0%E5%AD%A6/">
+        数学
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+        数据结构
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          概论
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           概论
         </label>
@@ -263,15 +298,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          概念
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          理论
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          概念
+          理论
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -325,7 +360,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    基本概念
+    图
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    树
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    关键词库
   </a>
 </li>
 </ul>
@@ -341,17 +386,22 @@
         9.字符串
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%E6%95%B0%E8%AE%BA/">
+        数论
+      </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           特训
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           特训
         </label>
@@ -395,13 +445,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           刷题
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           刷题
         </label>
@@ -524,7 +574,17 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    基本概念
+    图
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    树
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    关键词库
   </a>
 </li>
 </ul>
@@ -535,10 +595,12 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>7.图论</h1>
+<p><a href="/概论/7.图论">实现</a></p>
 <p><strong>图论 (Graph theory) </strong>是数学的一个分支，图是图论的主要研究对象</p>
 <p><strong>图 (Graph)</strong> 是由若干给定的顶点及连接两顶点的边所构成的图形，这种图形通常用来描述某些事物之间的某种特定关系。<strong>顶点</strong>用于代表事物，连接两顶点的<strong>边</strong>则用于表示两个事物间具有这种关系。</p>
 <h3 id="_1"></h3>
-<h3 id="_2">基本概念</h3>
+<p><a href="https://oi-wiki.org/graph/concept/">参考</a></p>
+<h3 id="_2">图</h3>
 <div class="admonition note">
 <p class="admonition-title">记号与约定</p>
 <ul>
@@ -549,12 +611,24 @@
 <li>如果特别指出，某些性质对任意图都有效</li>
 </ul>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>图一定是非空的，也就是至少会存在一个点</li>
+</ul>
+</div>
 <div class="admonition note">
 <p class="admonition-title">基本概念</p>
 <ol>
 <li>图(<code>graph</code>)：一个二元组 <span class="arithmatex">\(G=(V(G), E(G))\)</span><ul>
-<li><span class="arithmatex">\(V(G) \ne \emptyset\)</span> 称为 <strong>点集(vertex set)</strong>，简记为 V；对于每个 <span class="arithmatex">\(x\in V\)</span>，x 称为 <strong>顶点(vertex)</strong> 或 <strong>节点(node)</strong>，简称 <strong>点</strong></li>
-<li><span class="arithmatex">\(E(G)\)</span> 为 <span class="arithmatex">\(V(G)\)</span> 各结点之间边的集合，称为 <strong>边集(edge set)</strong>，简记为 E；对于每个 <span class="arithmatex">\(e = (x,y) \in E\)</span>，称 e 为 <strong>边(edge)</strong></li>
+<li><mark class="critic"><span class="arithmatex">\(V(G) \ne \emptyset\)</span></mark> 称为 <strong>点集(vertex set)</strong>，简记为 V；对于每个 <span class="arithmatex">\(x\in V\)</span>，x 称为 <strong>顶点(vertex)</strong> 或 <strong>节点(node)</strong>，简称 <strong>点</strong><ul>
+<li>约定 <span class="arithmatex">\(V(G) = \{ x_i~|~i=1..n \}\)</span>，<span class="arithmatex">\(n = |V(G)|\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(E(G)\)</span> 为 <span class="arithmatex">\(V(G)\)</span> 各结点之间边的集合，称为 <strong>边集(edge set)</strong>，简记为 E；对于每个 <span class="arithmatex">\(e = (x,y) \in E\)</span>，称 e 为 <strong>边(edge)</strong><ul>
+<li>约定 <span class="arithmatex">\(E(G) = \{ e_i~|~i=1..m \}\)</span>，<span class="arithmatex">\(m = |E(G)|\)</span>，其中 <span class="arithmatex">\(e_i = (x_j, x_k)\)</span></li>
+</ul>
+</li>
 <li><strong>有限图</strong>：V 和 E 都是有限集合；<strong>无限图</strong>：V 或 E 是无限集合</li>
 <li><strong>无向图(undirected graph)</strong>：对于每个 <span class="arithmatex">\(e\in E\)</span> 都是一个无序二元组 (x,y)，其中 x 和 y 称为 e 的<strong>端点(endpoint)</strong></li>
 <li><strong>有向图 (directed graph)</strong>：对于每个 <span class="arithmatex">\(e\in E\)</span> 都是一个有序二元组 (x,y) 或 <span class="arithmatex">\(x\to y\)</span>；<span class="arithmatex">\(x\to y\)</span> 又称为 <strong>有向边(directed edge)</strong> 或 <strong>弧(arc)</strong>；x 和 y 分别称为 <strong>起点(tail)</strong>，<strong>终点(head)</strong>；x 是 y 的前驱，y 是 x 的后继</li>
@@ -608,15 +682,206 @@
 </ul>
 </li>
 <li>路径：<ul>
-<li><strong>途径(walk)</strong>：连接一连串顶点的序列；记作 <span class="arithmatex">\(\omega = \{e_{\displaystyle a_i}\}\)</span>，<span class="arithmatex">\(e_{\displaystyle a_i} = (x_{\displaystyle b_{i-1}}, x_{\displaystyle b_i})\)</span>，其中 <span class="arithmatex">\(i = 1..k, a_i=1..n, b_i=1..m\)</span>；也可以记为 <span class="arithmatex">\(x_{\displaystyle b_0}\to x_{\displaystyle b_1} \to \dots \to x_{\displaystyle b_k}\)</span>；k 称为途径的 <strong>长度</strong>，记 <span class="arithmatex">\(|\omega|=k\)</span>（若边带权，长度通常指途径上的边权之和）</li>
-<li><strong>迹(trail)</strong>：对于一条途径 <span class="arithmatex">\(\omega\)</span>，若满足 <span class="arithmatex">\(a_i\ne a_j, i\ne j\)</span>，则 <span class="arithmatex">\(\omega\)</span> 为一条迹；即没有重复的边</li>
-<li><strong>(简单)途径(path)</strong>：对于一条迹，若满足 <span class="arithmatex">\(b_i\ne b_j, i\ne j\)</span>，则 <span class="arithmatex">\(\omega\)</span> 为一条路径；即没有重复的点</li>
+<li><strong>途径(walk)</strong>：长度为 k 的连接一连串顶点的序列，记作 <span class="arithmatex">\(\omega = \{e_{\displaystyle a_i} ~|~ i=1..k, a_i=1..m\}\)</span>，<span class="arithmatex">\(e_{\displaystyle a_i} = (x_{\displaystyle b_{i-1}}, x_{\displaystyle b_i})\)</span>，其中 <span class="arithmatex">\(b_i=1..n\)</span>；也可以记为 <span class="arithmatex">\(x_{\displaystyle b_0}\to x_{\displaystyle b_1} \to \dots \to x_{\displaystyle b_k}\)</span>；k 称为途径的 <strong>长度</strong>，记 <span class="arithmatex">\(|\omega|=k\)</span>（若边带权，长度通常指途径上的边权之和）</li>
+<li><strong>迹(trail)</strong>：对于一条途径 <span class="arithmatex">\(\omega\)</span>，若满足 <span class="arithmatex">\(a_i\ne a_j, i\ne j\)</span>，则 <span class="arithmatex">\(\omega\)</span> 为一条迹，记作 <span class="arithmatex">\(t\)</span>；即没有重复的边</li>
+<li><strong>(简单)途径(path)</strong>：对于一条迹，若满足 <span class="arithmatex">\(b_i\ne b_j, i\ne j\)</span>，则 <span class="arithmatex">\(\omega\)</span> 为一条路径，记作 <span class="arithmatex">\(p\)</span>；即没有重复的点</li>
 <li><strong>回路(circuit)</strong>：满足 <span class="arithmatex">\(x_{\displaystyle b_0} = x_{\displaystyle b_k}\)</span> 的迹</li>
 <li><strong>(简单)环/圈(cycle)</strong>：满足 <span class="arithmatex">\(x_{\displaystyle b_0} = x_{\displaystyle b_k}\)</span> 是唯一重复出现的点对的迹</li>
 </ul>
 </li>
+<li>子图<ul>
+<li><strong>子图(<code>subgraph</code>)</strong>：对于 <span class="arithmatex">\(G=(V,E)\)</span>，若存在 <span class="arithmatex">\(H=(V', E')\)</span>，满足 <span class="arithmatex">\(V'\subseteq V, E'\subseteq E\)</span>，则称 H 是 G 的，记作 <span class="arithmatex">\(H \subseteq G\)</span></li>
+<li><strong>生成子图</strong>：对于 <span class="arithmatex">\(G=(V,E)\)</span>，若存在 <span class="arithmatex">\(H=(V',E')\)</span>，满足 <span class="arithmatex">\(V'=V, E'\subseteq E\)</span>，则称 H 是 G 的生成子图</li>
+<li><strong>导出子图/诱导子图(<code>included subgraph</code>)</strong>：对于 <span class="arithmatex">\(G=(V,E)\)</span>，若存在 <span class="arithmatex">\(H=(V',E')\)</span>，只要 <span class="arithmatex">\((u,v)\in E\)</span>，均有 <span class="arithmatex">\((u,v)\in E'\)</span>（对于所有 <span class="arithmatex">\(u,v\in  V'\)</span>），则称 H 是 G 的导出子图/诱导子图，点集为 V' 的导出子图称为 V' 导出的子图，记作 <span class="arithmatex">\(G[V']\)</span><ul>
+<li><span class="arithmatex">\(G[V] = G\)</span></li>
+</ul>
+</li>
+<li><strong>k-因子(<code>k-factor</code>)</strong>：如果无向图 G 的某个生成子图 F 为 k-正则图，则 F 为 G 的一个 k 因子？</li>
+<li><strong>闭合子图(<code>closed subgraph</code>)</strong>：无向图 G 的导出子图 <span class="arithmatex">\(H=G[V^*]\)</span> 满足 <span class="arithmatex">\((u,v)\in E\)</span>，有 <span class="arithmatex">\(u\in V^*\)</span>，对于所有 <span class="arithmatex">\(v\in V^*\)</span>，则称 H 为 G 的一个闭合子图</li>
+</ul>
+</li>
+<li>连通：<ul>
+<li>假设 G=(V,E) 为无向图<ul>
+<li><strong>连通性(<code>connectivity</code>)</strong>若存在一条长度为 k(<span class="arithmatex">\(k\ge 0\)</span>) 的途径使得 <span class="arithmatex">\(u=x_{\displaystyle a_0}, v=x_{\displaystyle a_k}\)</span>（<span class="arithmatex">\(u,v\in V\)</span>），则称 u 和 v 是连通的</li>
+<li><strong>连通图(<code>connected graph</code>)</strong>若 <span class="arithmatex">\(u=x_{\displaystyle a_0}, v=x_{\displaystyle a_k}\)</span>，对于任意 <span class="arithmatex">\(u,v\in V\)</span>，则称 G 是连通图，G 的这一性质称为 连通性<code>connectivity</code></li>
+<li><strong>连通块/连通分量(<code>connected component</code>)/极大连通子图</strong>若 H 是 G 的一个连通<strong>子图</strong>，且不存在“真超图” F 满足 <span class="arithmatex">\(H\subsetneq F \subseteq G\)</span>，并且 F 为连通图，则 H 称为 连通块/连通分量/极大连通子图</li>
+</ul>
+</li>
+<li>假设 G=(V,E) 为有向图<ul>
+<li><strong>可达性</strong>：若存在一条长度为 k 的途径使得 <span class="arithmatex">\(u=x_{\displaystyle a_0}, v=x_{\displaystyle a_k}\)</span>（<span class="arithmatex">\(u,v\in V\)</span>），则称 u <strong>可达</strong> v</li>
+<li><strong>强连通性(<code>strongly connectivity</code>)</strong>：u 可达 v，对于所有 <span class="arithmatex">\(u,v\in V\)</span>，则称 G 是强连通的</li>
+<li><strong>弱连通性(<code>weakly connectivity</code>)</strong>：</li>
+<li>强连通分量/极大强连通子图</li>
+<li>弱连通分量/极大弱连通子图</li>
+<li><a href="https://oi-wiki.org/graph/scc/">更多内容参见此链接</a></li>
+</ul>
+</li>
+<li>割：假设 G 是连通图<ul>
+<li><a href="https://oi-wiki.org/graph/bcc/">参见 双连通分量</a>，<a href="https://oi-wiki.org/graph/cut/">参见 割点和桥</a></li>
+<li>割点：<ol>
+<li><strong>点割集(<code>vertex cut/separating set</code>)</strong>：<span class="arithmatex">\(V'\)</span> 是 G 的点割集，仅当 <span class="arithmatex">\(V'\in V\)</span>，且 <span class="arithmatex">\(G[V\setminus V']\)</span> 不是连通图</li>
+<li><strong>割点(<code>cut vertex</code>)</strong>：大小为一的点割集</li>
+<li><strong>k-点连通的(<code>k-vertex-connected</code>)</strong>：若 <span class="arithmatex">\(|V| \ge k+1\)</span> 且 G 不存在大小为 k-1 的点割集，则 G 是k-点连通的</li>
+<li><strong>点连通度(<code>vertex connectivity</code>)</strong>：连通图 G 的点连通度为 k，仅当 G 不是 (k+1)-点连通的，记作 <span class="arithmatex">\(\kappa(G)\)</span><ul>
+<li>注：对于非完全图，点连通度即为 <strong>最小点割集</strong> 的大小；对于完全图 <span class="arithmatex">\(K_n\)</span>，点连通度为 n-1</li>
+</ul>
+</li>
+<li><strong>u 到 v 的点割集</strong>：假设 u 可达 v，且 u 到 v 的路径长度不小于 2，若 <span class="arithmatex">\(V'\in V\)</span>，<span class="arithmatex">\(u,v\notin V'\)</span>，且 <span class="arithmatex">\(G[V\setminus V']\)</span> 中 u 和 v 不连通，则 <span class="arithmatex">\(V'\)</span> 称为 u 到 v 的点割集</li>
+<li><strong>u 到 v 的局部点连通度(<code>local connectivity</code>)</strong>：u 到 v 的最小点割集的大小称为 u 到 v 的局部点连通度，记作 <span class="arithmatex">\(\kappa(u, v)\)</span></li>
+</ol>
+</li>
+<li>割边：<ol>
+<li><strong>边割集(<code>edge cut set</code>)</strong>：<span class="arithmatex">\(E'\)</span> 是 G 的边割集，仅当 <span class="arithmatex">\(E'\in E\)</span>，且 <span class="arithmatex">\(G'=(V,E\setminus E')\)</span> 不是连通图</li>
+<li><strong>桥(<code>bridge</code>)</strong>：大小为一的边割集</li>
+<li><strong>k-边连通的(<code>k-edge-connected</code>)</strong>：若不存在大小为 k-1 的边割集，则称 G 是 k-边连通的</li>
+<li><strong>边连通度(<code>edge connectivity</code>)</strong>：连通图 G 的边连通度为 k，仅当 G 不是 (k+1)-边连通的，记作 <span class="arithmatex">\(\lambda(G)\)</span><ul>
+<li>注：对于所有图，边连通度为 <strong>最小边割集</strong> 的大小</li>
+</ul>
+</li>
+<li><strong>u 到 v 的边割集</strong>：假设 u 可达 v，且 u 到 v 的路径长度不小于 1，若 <span class="arithmatex">\(E'\in E\)</span>，且在 <span class="arithmatex">\(G'=(V,E\setminus E')\)</span> 中 u 和 v 不连通，则称 <span class="arithmatex">\(E'\)</span> 为 u 到 v 的边割集</li>
+<li><strong>u 到 v 的局部边连通度(<code>local edge-connectivity</code>)</strong>：u 到 v 的最小边割集的大小称为 u 到 v 的局部边连通度，记作 <span class="arithmatex">\(\lambda (u,v)\)</span></li>
+</ol>
+</li>
+<li><strong>点双连通(<code>biconnected</code>)</strong>：没有割点的连通图称为 点双连通的（除了一条边连接两个点的图之外，与 2-点连通 一致）</li>
+<li><strong>边双连通(<code>2-edge-connected</code>)</strong>：没有桥的连通图称为 边双连通的（等价于 2-边连通）</li>
+<li><strong>点双连通分量(<code>biconnected component</code>)</strong>：极大点双连通子图</li>
+<li><strong>边双连通分量(<code>2-edge-connected component</code>)</strong>：极大边双连通子图</li>
+<li><strong>Whitney 定理</strong>：对任意的图 G，有 <span class="arithmatex">\(\kappa(G) \le \lambda(G) \le \delta(G)\)</span>（不等式中的三项分别为 点连通度，边连通度，最小度）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常见图<ul>
+<li><strong>稀疏图(<code>sparse graph</code>)</strong>：边数远小于点数的平方的图称为 稀疏图</li>
+<li><strong>稠密图(<code>dense graph</code>)</strong>：边数接近其点数的平方的图称为 稠密图</li>
+<li>注：上述两种图一般用于讨论 <span class="arithmatex">\(O(|V|^2)\)</span> 算法和 <span class="arithmatex">\(O(|E|)\)</span> 算法之间效率的差异（稀疏图上后者占优势，稠密图上两者相当）</li>
+<li><strong>补图(<code>complement graph</code>)</strong>：对于无向简单图 G，若 <span class="arithmatex">\(\overline G\)</span> 满足<span class="arithmatex">\(V(\overline G) = V(G)\)</span>，且对于所有 <span class="arithmatex">\(e\in E(\overline G)\)</span> 当且仅当 <span class="arithmatex">\(e\notin E(G)\)</span>，则 <span class="arithmatex">\(\overline G\)</span> 称为 G 的补图</li>
+<li><strong>反图(<code>transpose graph</code>)</strong>：对于有向图 G，点集不变，每条边反向得到的图 <span class="arithmatex">\(G'=(V,E')\)</span>，称为 G 的反图（其中 <span class="arithmatex">\(E'=\{(u,v)~|~(v,u)\in E\}\)</span>）</li>
+<li><strong>完全图(<code>complete graph</code>)</strong>：无向简单图 G，若满足任意不同两点均有边，则称 G 为完全图，n 阶完全图记为 <span class="arithmatex">\(K_n\)</span></li>
+<li><strong>有向完全图(<code>complete digraph</code>)</strong>：有向图 G，若满足任意不同两点均有方向不同的边，则称 G 为有向完全图</li>
+<li><strong>无边图(<code>edgeless graph</code>)/空图(<code>empty graph</code>)/零图(<code>null graph</code>)</strong>：边集为空的图，n 阶无边图记为 <span class="arithmatex">\(\overline {K_n}\)</span> 或 <span class="arithmatex">\(N_n\)</span><ul>
+<li>注：零图也可以指 <strong>零阶图(<code>order-zero graph</code>)</strong> <span class="arithmatex">\(K_0\)</span>；<span class="arithmatex">\(N_n\)</span> 和 <span class="arithmatex">\(K_n\)</span> 互为补图</li>
+</ul>
+</li>
+<li><strong>竞赛图(<code>tournament graph</code>)</strong>：有向简单图 G，若满足任意不同两点都恰好有一条单向边，则称 G 为竞赛图</li>
+<li><strong>环图/圈图(<code>cycle graph</code>)</strong>：无向简单图 G，若所有边都恰好构成一个圈，则 G 称为环图/圈图，n 阶圈图记作 <span class="arithmatex">\(C_n\)</span>（<span class="arithmatex">\(n\ge 3\)</span>）<ul>
+<li>一张图为圈图 <span class="arithmatex">\(\iff\)</span> 它是 2-正则连通图？</li>
+</ul>
+</li>
+<li><strong>星图/菊花图(<code>star graph</code>)</strong>：无向连通图 G，若存在一个点 v 为支配点，其余点之间没有边相连，则 G 称为 星图/菊花图，n+1 阶星图记作 <span class="arithmatex">\(S_n\)</span> （<span class="arithmatex">\(n\ge 1\)</span>）</li>
+<li><strong>轮图(<code>wheel graph</code>)</strong>：无向连通图 G，存在一个点 v 为支配点，其他点之间构成一个圈，则 G 称为 轮图，n+1 阶轮图记作 <span class="arithmatex">\(W_n\)</span>（<span class="arithmatex">\(n\ge 3\)</span>）</li>
+<li><strong>链(<code>chain/path graph</code>)</strong>：无向连通图 G，其所有边恰好构成一个简单路径，则 G 称为链，n 阶链记作 <span class="arithmatex">\(P_n\)</span></li>
+<li><strong>树(<code>tree</code>)</strong>：不含环的无向连通图</li>
+<li><strong>基环树(<code>pseudotree</code>)</strong>：恰好有一个环的无向连通图</li>
+<li><strong>基环内向树</strong>：每个点入度都为 1 的有向弱连通图</li>
+<li><strong>基环外向树</strong>：每个点出度都为 1 的有向弱连通图</li>
+<li><strong>仙人掌(<code>cactus</code>)</strong>：每条边最多在一个环内的无向连通图</li>
+<li>注：上述五种图分别可以构成 森林(<code>forest</code>)，基环森林(<code>pseudoforest</code>)，基环外向树森林，基环内向树森林(<code>functional graph</code>)，沙漠</li>
+<li><strong>二分图(<code>bipartite graph</code>)</strong>：如果一张图的点集可以分为两部分，每一部分内部都没有连边，那么这张图称为 二分图<ul>
+<li>性质：不存在长度为奇数的环</li>
+<li>问题：如何判定二分图？（直接枚举的复杂度是 <span class="arithmatex">\(2^NN\)</span>）</li>
+</ul>
+</li>
+<li><strong>完全二分图(<code>complete bipartite graph/biclique</code>)</strong>：二分图 G，任意两个不在同一部分的点之间都有连边，那么 G 称为 完全二分图；如两部分分别有 n，m 个点，记 G 为 <span class="arithmatex">\(K_{n,m}\)</span></li>
+<li><strong>平面图(<code>planar graph</code>)</strong>：如果一张图可以画在一个平面上，且没有两条边在非端点处相交，那么这张图是一张 平面图<ul>
+<li>G 是平面图 <span class="arithmatex">\(\iff\)</span> G 的任意一张子图都不是 <span class="arithmatex">\(K_5\)</span> 或 <span class="arithmatex">\(K_{3,3}\)</span></li>
+<li>对于简单连通平面图 G，<span class="arithmatex">\(V\ge 3\)</span>，<span class="arithmatex">\(|E|\le 3|V|-6\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>同构：假设两个图 G 和 H，存在一个双射 <span class="arithmatex">\(f~:~V(G) \to V(H)\)</span>，且满足 <span class="arithmatex">\((u,v)\in E(G)\)</span>，当且仅当 <span class="arithmatex">\((f(u),f(v))\in E(H)\)</span>，则称 f 为 G 到 H 的一个 <strong>同构(<code>isomorphism</code>)</strong>，且图 G 与图 H 是 <strong>同构的(<code>isomorphic</code>)</strong>，记作 <span class="arithmatex">\(G\cong H\)</span><ul>
+<li>假设 <span class="arithmatex">\(G\cong H\)</span>，那么：</li>
+<li><span class="arithmatex">\(|V(G)| = |V(H)|,~|E(G)|=|E(H)|\)</span></li>
+<li>G 和 H 结点度的非增序列相同</li>
+<li>G 和 H 存在同构的导出子图</li>
+</ul>
+</li>
+<li>无向简单图的二元运算<ul>
+<li>假设无向简单图 <span class="arithmatex">\(G=(V_1,E_1)\)</span>，<span class="arithmatex">\(H=(V_2,E_2)\)</span></li>
+<li><strong>交(<code>intersection</code>)</strong>：<span class="arithmatex">\(G\cap H = (V_1\cap V_2, E_1\cap E_2)\)</span>（<span class="arithmatex">\(G\cap H\)</span>同样是无向简单图）</li>
+<li><strong>并(<code>union</code>)</strong>：<span class="arithmatex">\(G\cup H = (V_1\cup V_2, E_1\cup E_2)\)</span></li>
+<li><strong>和(<code>sum</code>)/直和(<code>direct sum</code>)/不交并</strong>：任意构造 <span class="arithmatex">\(H'\cong H\)</span> 使得 <span class="arithmatex">\(V(H')\cap V(G)=\emptyset\)</span>，称与 <span class="arithmatex">\(G\cup H'\)</span> 同构的任何图都称为 G 和 H 的和/直和/不交并，记作 <span class="arithmatex">\(G+H\)</span> 或 <span class="arithmatex">\(G\oplus H\)</span><ul>
+<li>注：若 G 和 H 点集不相交，则 <span class="arithmatex">\(G\cup H = G + H\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊的点集/边集</li>
 </ol>
 </div>
+<pre class="mermaid"><code>graph LR
+w[walk] --&gt; t[trail]
+t --&gt; p[path]
+t --&gt; c[circuit]
+t --&gt; C[cycle]</code></pre>
+<h3 id="_3">树</h3>
+<div class="admonition note">
+<p class="admonition-title">树的基本概念</p>
+<ul>
+<li><strong>无根树(<code>unrooted tree</code>)</strong>：没有固定根结点的树；等价定义：<ul>
+<li>有 n 个结点，n-1 条边的连通无向图</li>
+<li>无向无环的连通图</li>
+<li>任意两个结点之间有且仅有一条<strong>简单路径</strong>的无向图</li>
+<li>任何边均为<a href="https://oi-wiki.org/graph/cut/">桥</a>的连通图</li>
+<li>没有<a href="https://oi-wiki.org/graph/concept/#%E7%89%B9%E6%AE%8A%E7%9A%84%E5%9B%BE">圈</a>，且在任意不同的两点添加一条边之后所得图含唯一的一个圈的图</li>
+</ul>
+</li>
+<li><strong>有根树(<code>rooted tree</code>)</strong>：无根树的基础上，指定一个结点为 <strong>根</strong>，则形成一颗有根树（有根树多数情况下以无向图表示）</li>
+<li>定义<ul>
+<li>适用于无根树或有根树：<ul>
+<li><strong>森林(<code>forest</code>)</strong>：图 G 的每一个连通块（连通分量）都是树，那么该图称为 森林</li>
+<li><strong>生成树(<code>spanning tree</code>)</strong>：一个连通无向图 G 的<strong>生成子图</strong> H，满足 H 是树，那么 H 是 G 生成树（也即在 G 中选择 n-1 条边，使得所有点连通）</li>
+<li><strong>无根树的叶节点(<code>leaf tree</code>)</strong>：度数不超过 1 的结点</li>
+<li><strong>有根树的叶节点(<code>leaf tree</code>)</strong>：没有子结点的结点</li>
+</ul>
+</li>
+<li>适用于有根树：<ul>
+<li><strong>父亲(<code>parent node</code>)</strong>：对于任意非根节点，其到根结点的路径上的第二个结点为父节点（即仅有根结点没有父结点）</li>
+<li><strong>祖先(<code>ancestor</code>)</strong>：一个结点到根结点的路径上，除了它本身外的结点称为 祖先；该结点祖先的集合称为 祖先集合（根结点的祖先集合为空）</li>
+<li><strong>子结点(<code>child node</code>)</strong>：y 是 x 的子结点，当且仅当 x 是 y 的父亲；子结点的顺序一般是无序的，仅当该树不是二叉树</li>
+<li><strong>结点的深度(<code>depth</code>)</strong>：一个结点到根结点的路径上经过的边数</li>
+<li><strong>树的高度(<code>height</code>)</strong>：所有结点的深度的最大值</li>
+<li><strong>兄弟(<code>sibling</code>)</strong>：同一个父亲的多个孩子互为兄弟</li>
+<li><strong>后代(<code>descendant</code>)</strong>：y 是 x 的后代结点，当且仅当 x 是 y 的祖先结点</li>
+<li><strong>子树(<code>subtree</code>)</strong>：删掉与父亲相连的边后，该结点所在的子图称为子树</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>特殊的树：<ul>
+<li><strong>链(<code>chain/path graph</code>)</strong>：任意一个结点的度不大于 2 的树称为链</li>
+<li><strong>菊花/星星(<code>star</code>)</strong>：一棵树若存在一个结点 x，所有除了 x 以外的结点均与 x 相连，那么称该树为 菊花</li>
+<li><strong>有根二叉树(<code>rooted binary tree</code>)</strong>：一棵有根树中，若每个结点拥有的儿子数不超过 2，则称该树为 有根二叉树；两个子结点有序，分别称为 左子结点，右子节点；如果不加说明，一般的二叉树指的是又跟二叉树</li>
+<li><strong>完整二叉树(<code>full/proper binary tree</code>)</strong>：每个结点的子结点数量为 0 或者 2 的二叉树称为满二叉树</li>
+<li><strong>完全二叉树(<code>complete binary tree</code>)</strong>：只有最下面两层节点的度数可以小于 2，且最下面一层的结点都集中在该层最左边的连续位置上</li>
+<li><strong>完美二叉树(<code>perfect binary tree</code>)</strong>：所有叶节点的深度均相同的二叉树称为完美二叉树（等价定义：树的最后一层均为叶节点的树；通常说的“满二叉树”多指完美二叉树）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">树的常见概念</p>
+<ul>
+<li>存储树：只记录父节点；邻接点；左孩子右兄弟；特定于二叉树的存储方式</li>
+<li>树的遍历：<ul>
+<li>树上 dfs：先访问根结点，然后访问根结点每一个儿子的子树<ul>
+<li>应用：计算每个结点的 <strong>深度</strong>，父亲，<strong>直径(无权树)</strong>，<strong>dfn序</strong> 等信息</li>
+</ul>
+</li>
+<li>二叉树上 dfs：<ul>
+<li>前序，中序，后序 分别对应 “根，左，右”，“左，根，右”，“左，右，根” 的访问顺序；三种访问顺序均可以得到一个长度为 n 的序列</li>
+<li>已知 中序序列 和 前/后序任一一个序列，可以唯一确定一棵二叉树</li>
+</ul>
+</li>
+<li>树上 bfs：严格按照层次来访问节点（不常用）</li>
+<li>无根树：</li>
+<li>有根树：</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="_4">关键词库</h3>
 </article>
 </div>
 </div>
